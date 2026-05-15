@@ -1,0 +1,471 @@
+\chapter{Calcolo Deduttivo del Prim'Ordine}
+
+Come osservato nella logica proposizionale, oltre a sintassi e semantica, parte fondamentale di una logica è il suo calcolo deduttivo, ovvero il sistema di regole che ci permette, partendo da assiomi e assunzioni, di dimostrare teoremi. In questo capitolo analizzeremo il calcolo per la logica del prim'ordine, definendone le regole e dimostrando la sua correttezza e completezza.
+
+\section{Calcolo di deduzione naturale per il prim'ordine}
+
+Essendo il calcolo di deduzione naturale definito in modo che ogni regola catturi la semantica attesa di ogni operatore logico, è naturale pensare che il calcolo di deduzione naturale per la logica del prim'ordine sia definito come estensione di quello proposizionale, con l'aggiunta di regole per i quantificatori e, eventualmente, per l'uguaglianza se considerata simbolo logico.
+
+Di conseguenza, le regole per i simboli proposizionali rimangono invariate, come rimangono invariate le loro proprietà.
+
+Essendo i quantificatori operatori unari, avremo per ognuno due regole, una di introduzione e una di eliminazione. Abbiamo inoltre già osservato come i quantificatori siano generalizzazioni di congiunzione e disgiunzione, e quindi è naturale aspettarsi che le regole di introduzione ed eliminazione per i quantificatori siano generalizzazioni di quelle per la congiunzione e la disgiunzione. In particolare, ci aspettiamo che le regole per il quantificatore universale siano generalizzazioni di quelle per la congiunzione, e che le regole per il quantificatore esistenziale siano generalizzazioni di quelle per la disgiunzione.
+
+Inoltre, abbiamo già osservato nel capitolo sul calcolo proposizionale di come il calcolo funga in un certo senso tra \textit{ponte} tra sintassi e semantica, nel senso che, tramite operazioni di pura manipolazione sintattica, si tenta di catturare la semantica della conseguenza logica. Di conseguenza, non sorprenderà che, essendo che la semantica dei quantificatori è definita istanziando le variabili quantificate tramite sostituzioni semantiche, le regole a loro associate faranno uso delle sostituzioni sintattiche e sfrutteranno le proprietà che le collegano a quelle semantiche viste nel capitolo precedente. 
+
+Di fatto, ciò è quello che accade in una possibile dimostrazione di uno dei primi esempi di ragionamento deduttivo che abbiamo visto, ovvero \q{Tutti gli uomini sono mortali, Socrate è un uomo, quindi Socrate è mortale}. In questo caso, la formalizzazione di queste affermazioni è la seguente:
+\begin{itemize}
+  \item \q{Tutti gli uomini sono mortali}:\(\forall x, (U(x)\to M(x))\)
+  \item \q{Socrate è un uomo}:\( U(S)\)
+  \item \q{Socrate è mortale}:\(M(S)\)
+\end{itemize}
+
+Chiaramente, per dimostrare \(M(S)\) a partire da \(\forall x, (U(x)\to M(x))\) e \(U(S)\), è necessario in qualche modo istanziare la variabile \(x\) con il termine \(S\) per poter applicare \(\to I\).
+
+In particolare, tali proprietà valevano sotto opportune condizioni, che per le regole rappresenteranno dei vincoli di applicabilità. A differenza di quanto accadeva per i connettivi proposizionali quindi, le regole che andremo a vedere non saranno sempre applicabili quando si presenta un certo pattern di struttura dell'albero di dimostrazione, ma andranno verificate tali condizioni.
+Nella definizione di tali regole saranno ovviamente fondamentali le sostituzioni, che siano sintattiche o semantiche, e le loro proprietà viste nei capitoli precedenti. 
+
+Vediamo dunque tali regole.
+
+\paragraph{Regole per \(\forall\):}
+
+Iniziamo con le regole per il quantificatore universale. I vincoli di applicabilità per queste regole sono riportati di fianco a ogni regole. Verificheremo in seguito che tali vincoli sono necessari e sufficienti per garantire la correttezza del calcolo.
+
+\begin{equation*}
+  \infer[(\forall E), \text{ se } t \text{ è libero per } x \text{ in } \phi]{\subs{\phi}{x}{t}}{\forall x, \phi}
+\end{equation*}
+\begin{equation*}
+  \infer[(\forall I), \text{ se } \substack{ y \text{ non occorre in } \phi, \\ y \text{ non occorre libera in assunzioni non scaricate per } {\subs{\phi}{x}{y}}}]{\forall x, \phi}{\subs{\phi}{x}{y}}
+\end{equation*}
+
+
+Seppure i vincoli per \(\forall I\) possano risultare contorti, questi catturano esattamente il tipico ragionamento per dimostrare una proprietà universale, ovvero si prende un elemento generico \(y\) e si mostra che soddisfa la proprietà, da cui è possibile concludere che tutti gli elementi soddisfano la proprietà, non avendo fatto alcuna assunzione specifica su \(y\). Se \(y\) non fosse generico, non potremmo concludere niente su tutti gli elementi.
+
+L'analogia con le regole per la congiunzione è abbastanza chiara. Infatti, considerando sempre \(\forall\) come congiunzione infinita su tutte le istanziazioni della variabile, la regola di eliminazione seleziona un congiunto specifico, proprio come \(\land E\), mentre quella di introduzione, mediante i vincoli, pretende che sia dimostrato un congiunto generico, ovvero tutti i congiunti, proprio come \(\land I\) pretende che siano dimostrati due congiunti specifici.
+
+\paragraph{Regole per \(\exists\):}
+
+Le regole per il quantificatore esistenziale sono le seguenti:
+
+\begin{equation*}
+  \infer[(\exists I), \text{ se } t \text{ è libero per } x \text{ in } \phi]{\exists x\st \phi}{\subs{\phi}{x}{t}}
+\end{equation*}
+\begin{equation*}
+  \infer[(\exists E ), \text{ se }
+          \substack{  y \text{ non occorre in }\phi, \\
+            y \text{ non occorre libera in assunzioni non scaricate per } \psi\\
+            y \text{ non occorre libera in } \psi            
+            }
+        ]{\psi}{
+          \begin{array}[b]{c}
+            \exists x\st \phi
+            \end{array} &
+            \begin{array}[b]{c}
+            {[\subs{\phi}{x}{y}]}_1 \\
+            \vdots \\
+            \psi
+          \end{array} 
+  }
+\end{equation*}
+
+Qui l'analogia con le regole per la disgiunzione è ancora più chiara. Infatti, considerando sempre \(\exists\) come disgiunzione infinita su tutte le istanziazioni della variabile, la regola di introduzione ci permette di dedurre un esistenziale a partire da un qualsiasi disgiunto, proprio come \(\lor I\), mentre quella di eliminazione, mediante i vincoli e la struttura dell'albero di dimostrazione che ricorda \(\lor E\), richiede di dimostrare la conclusione assumendo uno alla volta ogni disgiunto, facendo di fatto un ragionamento per casi infinitario.
+
+Introdotte le regole, andiamo ad analizzare perché i vincoli di applicabilità associati a esse sono necessari. Per la sufficienza invece, delegheremo la dimostrazione alla dimostrazione di correttezza del calcolo in toto, che vedremo in seguito.
+
+Per verificare la necessità dei vincoli, sarà sufficiente trovare dei controesempi, in questo caso applicazioni di regole con un singolo vincolo violato, che portano a dedurre conclusioni che non sono conseguenze logiche delle premesse. In questi casi, l'unico motivo per cui la deduzione è errata è proprio la violazione del vincolo, e quindi si avrà che il vincolo è necessario.
+
+Iniziamo con applicazioni errate di \(\forall E\). Consideriamo \(\forall x, \exists y\st x < y\). Ora, per \(t=y\) si ha \(\subs{\exists y\st x < y}{x}{y} = \exists y\st y < y\).
+
+Quindi applicando \(\forall E\) avremmo
+
+\begin{prooftree}
+  \AxiomC{\(\forall x, \exists y\st x < y\)}
+  \RuleLabel{\(\forall E\) errata}
+  \UnaryInfC{\(\exists y\st y < y\)}
+\end{prooftree}
+
+Tale conclusione è chiaramente non valida, perché già solo considerando come struttura \(\N\) con interpretazione usuale la premessa è soddisfatta, mentre la conclusione è falsificata, essendo \(y\) un elemento di \(\N\) e quindi non è vero che \(y < y\).
+
+Questo si ha perché \(y\) non è libero per \(x\) in \(\exists y\st x < y\), poiché \(y\) è legato da un quantificatore esistenziale, e quindi non essendo soddisfatte le condizioni per l'applicazione di \(\forall E\), ovvero le premesse del \namecref{thm:fol_substitution}, non è garantito che la sostituzione sintattica di \(y\) per \(x\) in \(\exists y\st x < y\) sia semanticamente equivalente alla formula originale, e quindi non è garantito che la deduzione sia corretta.
+
+Passiamo ora a \(\forall I\). Consideriamo \(\forall x, (x=0\to x+1=1)\), che è vera in \(\N\) con interpretazione usuale. Ora, applicando \(\forall E\) correttamente otteniamo:
+
+\begin{prooftree}
+  \AxiomC{\(\forall x, (x=0\to x+1=1)\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(y=0\to y+1=1\)}
+\end{prooftree}
+
+Ora assumendo \(y=0\) e applicando \(\to E\) correttamente otteniamo:
+
+\begin{prooftree}
+  \AxiomC{\(\forall x, (x=0\to x+1=1)\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(y=0\to y+1=1\)}
+  \AxiomC{\(y=0\)}
+  \RuleLabel{\(\to E\) corretta}
+  \BinaryInfC{\(y+1=1\)}
+\end{prooftree}
+
+Se ora applicassimo \(\forall I\) erratamente, violando il secondo vincolo, ovvero avendo \(y\) che occorre libera in un'assunzione non scaricata, ovvero \(y=0\), avremmo:
+
+\begin{prooftree}
+  \AxiomC{\(\forall x, (x=0\to x+1=1)\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(y=0\to y+1=1\)}
+  \AxiomC{\(y=0\)}
+  \RuleLabel{\(\to E\) corretta}
+  \BinaryInfC{\(y+1=1\)}
+  \RuleLabel{\(\forall I\) errata}
+  \UnaryInfC{\(\forall x, (x+1=1)\)}
+\end{prooftree}
+che chiaramente, sempre considerando come struttura \(\N\) con interpretazione usuale, è falsificata.
+
+Questo esempio mostra chiaramente l'analogia tra questa regola e il processo usuale di dimostrazione di una proprietà universale. Una versione informale di questa dimostrazione infatti sarebbe.
+\begin{quote}
+  \q{
+    Sappiamo che per ogni \(x\in\N\), se \(x=0\) allora \(x+1=1\). Dunque, qualsiasi sia \(y\in\N\), se \(y=0\) allora \(y+1=1\). Consideriamo dunque \(y=0\). Dato che \(y=0\), allora \(y+1=1\).
+  }
+\end{quote}
+
+Fino a qui sarebbe tutto corretto, ma se volessimo trarne conclusioni universali, dovremmo aggiungere la locuzione \q{Essendo \(y\) un elemento generico di \(\N\), possiamo concludere}, che ovviamente non potremmo fare essendo \(y=0\), quindi tutt'altro che generico.
+
+Per il secondo vincolo, consideriamo \(\forall x, x=x\), anch'essa vera in \(\N\) con interpretazione usuale\footnote{Tale formula è vera in ogni struttura con \(=\) interpretata come equivalenza}. Ancora, per \(\forall E\) applicata correttamente, otteniamo:
+
+\begin{prooftree}
+  \AxiomC{\(\forall x, x=x\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(z=z\)}
+\end{prooftree}
+
+Ora, considerando \(\phi \eqdef x=z\), possiamo notare che \(z=z\) è proprio \(\subs{\phi}{x}{z}\), e quindi, se applicassimo \(\forall I\) erratamente, violando il primo vincolo, ovvero avendo \(z\) che occorre in \(\phi\), avremmo:
+\begin{prooftree}
+  \AxiomC{\(\forall x, x=x\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(z=z\)}
+  \RuleLabel{\(\forall I\) errata}
+  \UnaryInfC{\(\forall x, x=z\)}
+\end{prooftree}
+
+A questo punto applicando nuovamente \(\forall I\), questa volta correttamente\footnote{In questo caso \(\phi \eqdef \forall x, x=y\), dunque \(z\) non occorre in \(\phi\), ed è possibile di conseguenza dedurre \(\forall y, \phi\) da \(\subs{\phi}{y}{z}\), ovvero \(\forall x, x=y\)}, avremmo:
+\begin{prooftree}
+  \AxiomC{\(\forall x, x=x\)}
+  \RuleLabel{\(\forall E\) corretta}
+  \UnaryInfC{\(z=z\)}
+  \RuleLabel{\(\forall I\) errata}
+  \UnaryInfC{\(\forall x, x=z\)}
+  \RuleLabel{\(\forall I\) corretta}
+  \UnaryInfC{\(\forall y, \forall x, x=y\)}
+\end{prooftree}
+Ovvero, dal fatto che ogni oggetto è uguale a se stesso, possiamo dedurre che ogni oggetto è uguale a ogni altro oggetto, il che è chiaramente falso in \(\N\) con interpretazione usuale, e quindi la deduzione è errata.
+
+Per passare alle regole per \(\exists\), possiamo iniziare a notare che l'ultimo esempio in un caso esistenziale sarebbe assolutamente legittimo.
+Infatti da \(z=z\) è corretto dedurre \(\exists x\st x=z\), da cui è corretto dedurre \(\exists x\st \exists y\st x=y\).
+
+Questo perché l'unica cosa da verificare è che \(z\) sia libera per \(x\) in \(x=z\), e questo è vero poiché \(z\) è libera in \(x=z\), e quindi a maggior ragione è libera per \(x\).
+
+Consideriamo però un caso in cui si viola il vincolo di applicabilità di \(\exists I\). Chiaramente, vista la somiglianza dei vincoli di applicabilità, questo sarà molto simile a quello di \(\forall E\). Consideriamo infatti \(\forall y, y = y\), che abbiamo già osservato essere vera in \(\N\) con interpretazione usuale. Ora, applicando \(\exists I\) erratamente, si potrebbe pensare di dedurre \(\exists x\st\forall y, x = y\), che è chiaramente falsa in ogni struttura con più di un elemento. Possiamo notare infatti che per \(\phi \eqdef \forall y, x = y\), si ha che \(\subs{\phi}{x}{y} = \forall y, y = y\), ed è quindi rispettata la struttura di \(\exists I\). A non essere soddisfatto però è il vincolo di applicabilità, poiché \(y\) non è libera per \(x\) in \(\forall y, x = y\), poiché \(y\) è legato da un quantificatore universale.
+
+Passiamo ora alla regola più articolata, ovvero quella di eliminazione di \(\exists\). 
+Consideriamo \(\exists x\st\exists y \st x<y\), anch'essa chiaramente vera in \(\N\) con interpretazione usuale. A questo punto, assumiamo \(\exists y\st y<y\), che è chiaramente falsa in \(\N\) con interpretazione usuale. Possiamo notare però che per \(\phi \eqdef \exists y \st x<y\), si ha che \(\subs{\phi}{x}{y} = \exists y \st y<y\). Di conseguenza, essendo rispettata la struttura della regola si potrebbe considerare valida la seguente deduzione:
+\begin{prooftree}
+  \AxiomC{\({[\exists y\st y<y]}_1\)}
+  \UnaryInfC{\(\exists y\st y<y\)}
+  \AxiomC{\(\exists x\st\exists y \st x<y\)}
+  \RuleLabel{\(\exists E_1\) errata}
+  \BinaryInfC{\(\exists y\st y<y\)}
+\end{prooftree}
+che è chiaramente errata, essendo la premessa vera e la conclusione falsa in \(\N\) con interpretazione usuale. Il vincolo violato in questo caso è che \(y\) occorre nella formula quantificata.
+
+Consideriamo ora \(\exists x \st x \leq 5\). Chiaramente con \(\phi \eqdef x \leq 5\) si ha che \(\subs{\phi}{x}{y} = y \leq 5\), e quindi assumendo \(y \leq 5\) e applicando \(\exists E\) erratamente otterremmo:
+\begin{prooftree}
+  \AxiomC{\({[y \leq 5]}_1\)}
+  \UnaryInfC{\(y \leq 5\)}
+  \AxiomC{\(\exists x \st x \leq 5\)}
+  \RuleLabel{\(\exists E_1\) errata}
+  \BinaryInfC{\(y \leq 5\)}
+\end{prooftree}
+
+A questo punto, applicando correttamente \(\forall I\) otterremmo:
+
+\begin{prooftree}
+  \AxiomC{\({[y \leq 5]}_1\)}
+  \UnaryInfC{\(y \leq 5\)}
+  \AxiomC{\(\exists x \st x \leq 5\)}
+  \RuleLabel{\(\exists E_1\) errata}
+  \BinaryInfC{\(y \leq 5\)}
+  \RuleLabel{\(\forall I\) corretta}
+  \UnaryInfC{\(\forall z, z \leq 5\)}
+\end{prooftree}
+che è chiaramente falso in \(\N\) con interpretazione usuale, e quindi la deduzione è errata. Il vincolo che si è violato in questo caso è che \(y\) occorre libera nella conclusione \(\psi \eqdef y < 5\).
+
+Infine, assumiamo \(z=5\) e \(\neq (z = 5)\). Chiaramente si ha:
+
+\begin{prooftree}
+  \AxiomC{\(z=5\)}
+  \AxiomC{\(\neq (z=5)\)}
+  \RuleLabel{\(\neg E\)}
+  \BinaryInfC{\(\bot\)}
+\end{prooftree}
+
+A questo punto, considerando \(\phi \eqdef x = 5\), si ha che \(\subs{\phi}{x}{z}\) è \( z = 5\), dunque, assumendo \(\exists x\st x = 5\) per \(\exists E\) possiamo dedurre \(\bot\) scaricando l'assunzione \(z=5\).
+
+\begin{prooftree}\label{prooft:wrong_fol_exists_e}
+  \AxiomC{\({[z=5]}_1\)}
+  \AxiomC{\(\neq (z=5)\)}
+  \RuleLabel{\(\neg E\)}
+  \BinaryInfC{\(\bot\)}
+  \AxiomC{\(\exists x\st x = 5\)}
+  \RuleLabel{\(\exists E_1\) errata}
+  \BinaryInfC{\(\bot\)}
+\end{prooftree}
+
+Ora, tramite \(\RAA\), potremmo scaricare \(\neq (z=5)\) deducendo \(z=5\) e, come nel precedente esempio, mediante \(\forall I\) ottenere \(\forall x, x=5\).
+
+\begin{prooftree}
+  \AxiomC{\({[z=5]}_1\)}
+  \AxiomC{\({[\neq (z=5)]}_2\)}
+  \RuleLabel{\(\neg E\)}
+  \BinaryInfC{\(\bot\)}
+  \AxiomC{\(\exists x\st x = 5\)}
+  \RuleLabel{\(\exists E_1\) errata}
+  \BinaryInfC{\(\bot\)}
+  \RuleLabel{\(\RAA_2\)}
+  \UnaryInfC{\(z=5\)}
+  \RuleLabel{\(\forall I\) corretta}
+  \UnaryInfC{\(\forall x, x=5\)}
+\end{prooftree}
+
+Si è dunque dimostrato che, assumendo \(\exists x\st x=5\), si può dedurre che \(\forall x, x = 5\). Tale deduzione è chiaramente errata, essendo la premessa vera e la conclusione falsa in \(\N\) con interpretazione usuale. Qui notare la violazione del vincolo è più sottile, poiché a deduzione conclusa a una prima occhiata tutte le assunzioni sembrano essere state scaricate. È importante notare però che per l'applicabilità di una regola, è necessario che i vincoli siano soddisfatti già al momento dell'applicazione della regola, ovvero nel sottoalbero di deduzione radicato nella regola. Come si può vedere chiaramente nel secondo albero di deduzione di questo caso, al momento dell'applicazione di \(\exists E\), \(\neg (z = 5)\) non è ancora stata scaricata da \(\RAA\) ed è quindi ancora presente come assunzione non scaricata, contenendo \(z\) libera. Dunque è violato l'ultimo vincolo di applicabilità di \(\exists E\), e rendendo la deduzione è errata.
+
+Mostrati dunque esempi errati di deduzione naturale in prim'ordine, per evidenziare la necessità dei vincoli di applicabilità delle regole per i quantificatori, passiamo ora a mostrare esempi di deduzioni corrette.
+
+
+\begin{example}{Deduzione naturale per \(\FOL\) 1}
+  Vogliamo dimostrare \(\vdash (\forall x, (P(x) \land R(x)))\leftrightarrow (\forall x, P(x) \land \forall x, R(x))\).
+
+  Per farlo dimostriamo entrambe le direzioni, che per semplicità mostreremo come \((\forall x, (P(x) \land R(x)))\vdash (\forall x, P(x) \land \forall x, R(x))\) e \((\forall x, P(x) \land \forall x, R(x))\vdash (\forall x, (P(x) \land R(x)))\).
+
+  Iniziamo con la prima.
+
+  L'operatore principale è \(\land\), quindi è ragionevole iniziare con \(\land I\).
+
+  \begin{prooftree}
+    \AxiomC{\(\forall x, P(x)\)}
+    \AxiomC{\(\forall x, R(x)\)}
+    \RuleLabel{\(\land I\)}
+    \BinaryInfC{\(\forall x, P(x) \land \forall x, R(x)\)}
+  \end{prooftree}
+
+  Abbiamo dunque da dimostrare due formule con \(\forall\) come operatore principale. In linea di principio, per mostrare tali formule si può procedere o per contraddizione, o usando \(\forall I\). In questo caso la contraddizione risulta poco utile, non avendo a disposizione negazioni per generarla, quindi è ragionevole procedere con \(\forall I\).
+  
+  \begin{prooftree}
+    \AxiomC{\(P(y)\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, P(x)\)}
+    \AxiomC{\(R(y)\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, R(x)\)}
+    \RuleLabel{\(\land I\)}
+    \BinaryInfC{\(\forall x, P(x) \land \forall x, R(x)\)}
+  \end{prooftree}
+
+  A questo punto con l'assunzione \(\forall x, (P(x) \land R(x))\) possiamo dedurre \(P(y) \land R(y)\) per \(\forall E\) da cui, con \(\land E\) otteniamo i congiunti che ci servivano a chiudere la dimostrazione.
+
+   \begin{prooftree}
+        \AxiomC{\(\forall x, (P(x) \land R(x))\)}
+        \RuleLabel{\(\forall E\)}
+        \UnaryInfC{\(P(y) \land R(y)\)}
+        \RuleLabel{\(\land E^l\)}
+        \UnaryInfC{\(P(y)\)}
+        \RuleLabel{\(\forall I\)}
+        \UnaryInfC{\(\forall x, P(x)\)}
+
+        \AxiomC{\(\forall x, (P(x) \land R(x))\)}
+        \RuleLabel{\(\forall E\)}
+        \UnaryInfC{\(P(y) \land R(y)\)}
+        \RuleLabel{\(\land E^r\)}
+        \UnaryInfC{\(R(y)\)}
+        \RuleLabel{\(\forall I\)}
+        \UnaryInfC{\(\forall x, R(x)\)}
+      \RuleLabel{\(\land I\)}
+      \BinaryInfC{\(\forall x, P(x) \land \forall x, R(x)\)}
+  \end{prooftree}
+
+  Finita la prova è importante controllare che tutti i vincoli di applicabilità siano rispettati. In questo caso, avendo usato \(\forall I\) per dimostrare \(\forall x, P(x)\) e \(\forall x, R(x)\), è necessario che \(y\) non occorra in \(\phi\), ovvero in \(P(x)\) e \(R(x)\), e che \(y\) non occorra libera in assunzioni non scaricate per \(\forall x, P(x)\) e \(\forall x, R(x)\). Per quanto riguarda \(\forall E\) invece è necessario che \(y\) sia libero per \(x\) in \(P(x) \land R(x)\), e questo è vero poiché \(y\) non occorre in \(P(x) \land R(x)\).
+  \end{example}
+  \begin{example}{Deduzione naturale per \(\FOL\) 2}
+  Passiamo all'altro verso, ovvero \((\forall x, P(x) \land \forall x, R(x))\vdash (\forall x, (P(x) \land R(x)))\).
+
+  Questa volta partiamo con una formula quantificata. Ancora una volta, è ragionevole iniziare con \(\forall I\), non avendo negazioni con cui produrre una contraddizione.
+
+  \begin{prooftree}
+    \AxiomC{\(P(y) \land R(y)\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, (P(x) \land R(x))\)}
+  \end{prooftree}
+
+  A questo punto possiamo ottenere la congiunzione tramite \(\land I\) dovendo dimostrare \(P(y)\) e \(R(y)\).
+  
+  \begin{prooftree}
+    \AxiomC{\(P(y)\)}
+    \AxiomC{\(R(y)\)}
+    \RuleLabel{\(\land I\)}
+    \BinaryInfC{\(P(y) \land R(y)\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, (P(x) \land R(x))\)}
+  \end{prooftree}
+
+  Possiamo notare che avendo usato \(\forall I\) non possiamo più usare assunzioni non scaricate con \(y\) libero. Fortunatamente, l'assunzione che abbiamo non contiene \(y\). Proprio da tale assunzione infatti possiamo dedurre i due congiunti \(\forall x, P(x)\) e \(\forall x, R(x)\) mediante \(\land E\), dai quali, con \(\forall E\) potremmo dedurre \(P(y)\) e \(R(y)\) che ci servono per concludere la dimostrazione.
+
+  \begin{prooftree}
+      \AxiomC{\(\forall x, P(x) \land \forall x, R(x)\)}
+      \RuleLabel{\(\land E^l\)}
+      \UnaryInfC{\(\forall x, P(x)\)}
+      \RuleLabel{\(\forall E\)}
+      \UnaryInfC{\(P(y)\)}
+      
+      \AxiomC{\(\forall x, P(x) \land \forall x, R(x)\)}
+      \RuleLabel{\(\land E^r\)}
+      \UnaryInfC{\(\forall x, R(x)\)}
+      \RuleLabel{\(\forall E\)}
+      \UnaryInfC{\(R(y)\)}
+    \RuleLabel{\(\land I\)}
+    \BinaryInfC{\(P(y) \land R(y)\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, (P(x) \land R(x))\)}
+  \end{prooftree}
+
+  Anche qui possiamo verificare che i vincoli di \(\forall E\) sono rispettati, poiché \(y\) è libero per \(x\) in \(P(x)\) e \(R(x)\) non apparendo.
+\end{example}
+
+\subsection{Applicazione del calcolo naturale per il prim'ordine}
+
+Come fatto per la logica proposizionale, andiamo ad analizzare nel dettaglio alcuni esempi di deduzioni naturali che esploreranno tutte le nuove regole di inferenza che abbiamo introdotto, in modo da avere un'idea più chiara di come funziona questo calcolo, e di come scegliere le regole da applicare per dedurre formule più complesse.
+
+\subsubsection*{Deduzione di \(\vdash (\exists x\st (P(x)\lor R(x)) )\to (\exists x\st P(x) \lor \exists x\st R(x))\)}
+
+Come fatto in precedenza, per semplicità ci limiteremo a dimostrare \(\exists x\st (P(x)\lor R(x)) \vdash \exists x\st P(x) \lor \exists x\st R(x)\), dalla quale, tramite \(\to I\) si potrà dedurre la formula che ci interessa.
+
+Una prima osservazione che è possibile fare è che, avendo come premessa una formula con un quantificatore esistenziale come operatore principale, è possibile contare tra le assunzioni disponibili anche la formula che quel quantificatore esistenziale quantifica, ovvero \(P(y)\lor R(y)\), con \(y\) variabile arbitraria, poiché sarà scaricabile mediante \(\exists E\) a partire da \(\exists x\st (P(x)\lor R(x))\).
+
+Dovendo dimostrare una disgiunzione, un primo approccio possibile sembrerebbe quello di utilizzare \(\lor I\), e per fare ciò sarebbe necessario dimostrare \(\exists x\st P(x)\) o \(\exists x\st R(x)\), per i quali servirebbe dimostrare \(P(t)\) o \(R(t)\) singolarmente.
+
+
+\begin{center}
+  \begin{minipage}{0.42\textwidth}
+    \centering
+    \begin{prooftree}
+      \AxiomC{\(P(y)\)}
+      \RuleLabel{\(\exists I\)}
+      \UnaryInfC{\(\exists x\st P(x)\)}
+
+      \RuleLabel{\(\lor I\)}
+      \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+    \end{prooftree}
+  \end{minipage}
+  \hspace{0.3cm}
+  \begin{minipage}{0.42\textwidth}
+    \centering
+    \begin{prooftree}
+      \AxiomC{\(R(y)\)}
+      \RuleLabel{\(\exists I\)}
+      \UnaryInfC{\(\exists x\st R(x)\)}
+
+      \RuleLabel{\(\lor I\)}
+      \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+    \end{prooftree}
+  \end{minipage}
+\end{center}
+
+Possiamo ora notare che abbiamo dimostrato la stessa formula, ovvero \(\exists x\st P(x) \lor \exists x\st R(x)\), assumendo una prima volta \(P(y)\) e una seconda volta \(R(y)\). Proprio questa situazione è quella che ci permette di applicare \(\lor E\) per dedurre \(\exists x\st P(x) \lor \exists x\st R(x)\) assumendo solo \(P(y) \lor R(y)\)
+
+
+\begin{prooftree}
+  \AxiomC{\({[P(y)]}_1\)}
+  \RuleLabel{\(\exists I\)}
+  \UnaryInfC{\(\exists x\st P(x)\)}
+
+  \RuleLabel{\(\lor I\)}
+  \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+
+  \AxiomC{\({[R(y)]}_2\)}
+  \RuleLabel{\(\exists I\)}
+  \UnaryInfC{\(\exists x\st R(x)\)}
+
+  \RuleLabel{\(\lor I\)}
+  \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+  \AxiomC{\(P(y) \lor R(y)\)}
+  \RuleLabel{\(\lor E_{1,2}\)}
+  \TrinaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+\end{prooftree}
+
+A questo punto, come anticipato, possiamo scaricare \(P(y) \lor R(y)\) mediante \(\exists E\) con \(\exists x\st (P(x)\lor R(x))\), senza dover dunque assumere \(P(y)\lor R(y)\) come assunzione, e concludere la dimostrazione.
+
+\begin{prooftree}
+  \small
+  \AxiomC{\({[P(y)]}_1\)}
+  \RuleLabel{\(\exists I\)}
+  \UnaryInfC{\(\exists x\st P(x)\)}
+
+  \RuleLabel{\(\lor I\)}
+  \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+
+  \AxiomC{\({[R(y)]}_2\)}
+  \RuleLabel{\(\exists I\)}
+  \UnaryInfC{\(\exists x\st R(x)\)}
+
+  \RuleLabel{\(\lor I\)}
+  \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+
+  \AxiomC{\({[P(y) \lor R(y)]}_3\)}
+  
+  \RuleLabel{\(\lor E_{1,2}\)}
+  \TrinaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+  \AxiomC{\(\exists x\st (P(x)\lor R(x))\)}
+  \RuleLabel{\(\exists E_3\)}
+  \BinaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+\end{prooftree}
+
+Andando dunque a controllare i vincoli di applicabilità, per entrambe le \(\exists I\) si ha che \(y\) non è in \(P(x)\) e \(R(x)\), e quindi è banalmente libero per \(x\) in \(P(x)\) e \(R(x)\).
+Per \(\exists E\) dobbiamo verificare che \(y\) non occorre in \(\phi\), ovvero in \(P(x)\lor R(x)\), che è verificato, che \(y\) non appartenga a nessuna assunzione non scaricata, e questo è verificato poiché l'unica assunzione fatta è scaricata da \(\exists E\), e che \(y\) non occorra libera in \(\psi\).
+
+\begin{warning}{}
+  L'ordine di applicazione delle regole è molto importante in questo esempio. Si potrebbe infatti pensare, al posto di scaricare \(P(y)\lor R(y)\) con \(\exists E\) di dimostrarla, rendendola così non più un assunzione con una deduzione del tipo:
+  
+  \begin{prooftree}
+    \tiny
+    \AxiomC{\({[P(y)]}_1\)}
+    \RuleLabel{\(\exists I\)}
+    \UnaryInfC{\(\exists x\st P(x)\)}
+
+    \RuleLabel{\(\lor I\)}
+    \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+
+    \AxiomC{\({[R(y)]}_2\)}
+    \RuleLabel{\(\exists I\)}
+    \UnaryInfC{\(\exists x\st R(x)\)}
+
+    \RuleLabel{\(\lor I\)}
+    \UnaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+
+    \AxiomC{\({[P(y) \lor R(y)]}_3\)}
+    \UnaryInfC{\(P(y) \lor R(y)\)}
+    \AxiomC{\(\exists x\st (P(x)\lor R(x))\)}
+    \RuleLabel{\(\exists E_3\)}
+    \BinaryInfC{\(P(y) \lor R(y)\)}
+
+    \RuleLabel{\(\lor E_{1,2}\)}
+    \TrinaryInfC{\(\exists x\st P(x) \lor \exists x\st R(x)\)}
+  \end{prooftree}
+
+  Se analizziamo bene il sottoalbero di \(\exists E\) però notiamo che si viola il vincolo di applicabilità.
+  \begin{prooftree}
+    \AxiomC{\({[P(y) \lor R(y)]}_3\)}
+    \UnaryInfC{\(P(y) \lor R(y)\)}
+    \AxiomC{\(\exists x\st (P(x)\lor R(x))\)}
+    \RuleLabel{\(\exists E_3\)}
+    \BinaryInfC{\(P(y) \lor R(y)\)}
+  \end{prooftree}
+
+  Infatti, \(y\) occorre libera in \(\psi\), ovvero in \(P(y) \lor R(y)\), e quindi non è possibile applicare \(\exists E\) stesso. Nonostante le deduzioni siano estremamente simili, e in particolare usino le stesse regole, il solo scambiare l'ordine di applicazione di due di queste ci porta a una deduzione errata.
+\end{warning}

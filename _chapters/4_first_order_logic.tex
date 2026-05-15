@@ -1,24 +1,24 @@
 \chapter{Logica del prim'ordine}
 
-La logica proposizionale si concentra essenzialmente sulle proprietà degli operatori logici, ed è detta proposizionale perché sono considerati atmomiche le proposizioni. Questo si riflette nella traduzione dal linguaggio naturale, in cui la separazione tra proposizioni avveviva tramite congiunzioni, disgiunzioni, negazioni, implicazioni, ecc.
+La logica proposizionale si concentra essenzialmente sulle proprietà degli operatori logici, ed è detta proposizionale perché sono considerati atomiche le proposizioni. Questo si riflette nella traduzione dal linguaggio naturale, in cui la separazione tra proposizioni avveniva tramite congiunzioni, disgiunzioni, negazioni, implicazioni, ecc.
 
-Tale granularità però non è sufficiente per esprimere relazioni tra elementi del discorso interni alle proposizioni. Consideriamo nuovamente infatti l'esempio del sillogismo aristotelico \q{Ogni uomo è mortale, Socrate è un uomo, dunque Socrate è mortale}. Una traduzione in logica proposizionale potrebbe essere \((p\land q)\to r\) poiché le tre frasi internamente non hanno una struttura proposizionale. Chiaramente il fatto che tali frasi siano considerate valide non può dipendere dalla loro struttura proposizionale, poichè la struttura proposizionale non è sufficiente per esprimere la validità del sillogismo. Ciò che intuitivamente collega le frasi e rende sensata la validità sono elemnti interni alle proposizioni, come il fatto che \q{Socrate} è un \q{uomo} e che ogni \q{uomo} è \q{mortale}. Di conseguenza per esprimere la validità di tale sillogismo è necessario andare ad analizzare una struttura delle frasi più granulare che nella logica proposizionale viene incporporata negli atomi.
+Tale granularità però non è sufficiente per esprimere relazioni tra elementi del discorso interni alle proposizioni. Consideriamo nuovamente infatti l'esempio del sillogismo aristotelico \q{Ogni uomo è mortale, Socrate è un uomo, dunque Socrate è mortale}. Una traduzione in logica proposizionale potrebbe essere \((p\land q)\to r\) poiché le tre frasi internamente non hanno una struttura proposizionale. Chiaramente il fatto che tali frasi siano considerate valide non può dipendere dalla loro struttura proposizionale, poiché la struttura proposizionale non è sufficiente per esprimere la validità del sillogismo. Ciò che intuitivamente collega le frasi e rende sensata la validità sono elementi interni alle proposizioni, come il fatto che \q{Socrate} è un \q{uomo} e che ogni \q{uomo} è \q{mortale}. Di conseguenza per esprimere la validità di tale sillogismo è necessario andare ad analizzare una struttura delle frasi più granulare che nella logica proposizionale viene incorporata negli atomi.
 
-In questo caso la relazione che ci viene nascosta è il fatto che \q{uomo} è una proprietà degli ogetti, che può essere vera o falsa, stessa cosa per \q{mortale}. Inoltre \q{Socrate} è un elemento specifico del nostro universo. Quello che quindi ci dicono queste frasi è che un ogetto del nostro dominio che è \q{uomo} è \q{mortale}, e che in particolare l'ogetto \q{Socrate} è un \q{uomo} e dunque se ne deduce che \q{Socrate} è \q{mortale}. Il salto concettuale quindi, da logica proposizionale al prim'ordine, è l'arricchimento del concetto intuitivo di situazione da un associazione tra frasi e valori di verità che mi indicano se sono accaduti o meno, all' associazione tra gli ogetti del discorso e le proprietà che essi hannno.
+In questo caso la relazione che ci viene nascosta è il fatto che \q{uomo} è una proprietà degli oggetti, che può essere vera o falsa, stessa cosa per \q{mortale}. Inoltre \q{Socrate} è un elemento specifico del nostro universo. Quello che quindi ci dicono queste frasi è che un oggetto del nostro dominio che è \q{uomo} è \q{mortale}, e che in particolare l'oggetto \q{Socrate} è un \q{uomo} e dunque se ne deduce che \q{Socrate} è \q{mortale}. Il salto concettuale quindi, da logica proposizionale al prim'ordine, è l'arricchimento del concetto intuitivo di situazione da un associazione tra frasi e valori di verità che mi indicano se sono accaduti o meno, all' associazione tra gli oggetti del discorso e le proprietà che essi hanno.
 
-Senza entrare subito nel dettaglio della semantica, per esprimere tale granularità si avrà necessariamente di nomi di elementi di una situazione, quali possono essere anche finiti in un universo di ogetti infiniti. I nomi non sono, come nella logica proposizionale, ogetti sintattici che vengono interpretati in valori di verità, ma sono oggetti sintattici che vengono interpretati in oggetti del dominio. Dunque, anche il concettto di interpretazione cambia, diventando più complesso.
+Senza entrare subito nel dettaglio della semantica, per esprimere tale granularità si avrà necessariamente di nomi di elementi di una situazione, quali possono essere anche finiti in un universo di oggetti infiniti. I nomi non sono, come nella logica proposizionale, oggetti sintattici che vengono interpretati in valori di verità, ma sono oggetti sintattici che vengono interpretati in oggetti del dominio. Dunque, anche il concetto di interpretazione cambia, diventando più complesso.
 
-Inoltre, per parlare di tali ogetti sarà necessario parlare di proprietà di tali ogetti, o di relazioni tra essi nel caso siano coinvolti più ogetti nel discorso. Per proprietà e relazioni, il concetto che esse esprimono è molto vicino al concetto matematico di proprietà. Ad esempio, per i numeri una proprietà è quella di essere pari. Ovviamente da sola non ha molto senso, ma applicata ad uno specifico ogetto del dominio come ad esempio \(5\) è interpretabile con un valore di verità, ovvero vero se l'ogetto ha quella proprietà, falso altrimenti. Ovviamente tale assegnamento dipende dall'interpretazione che diamo alla stringa \q{pari}, che dal punto di vista logico non è altro che un simbolo sintattico (o un nome di proprietà) a cui possiamo dare una semantica arbitraria. Senza un modello, \q{pari} è solo un simbolo, e non ha alcun significato.
+Inoltre, per parlare di tali oggetti sarà necessario parlare di proprietà di tali oggetti, o di relazioni tra essi nel caso siano coinvolti più oggetti nel discorso. Per proprietà e relazioni, il concetto che esse esprimono è molto vicino al concetto matematico di proprietà. Ad esempio, per i numeri una proprietà è quella di essere pari. Ovviamente da sola non ha molto senso, ma applicata a uno specifico oggetto del dominio come ad esempio \(5\) è interpretabile con un valore di verità, ovvero vero se l'oggetto ha quella proprietà, falso altrimenti. Ovviamente tale assegnamento dipende dall'interpretazione che diamo alla stringa \q{pari}, che dal punto di vista logico non è altro che un simbolo sintattico (o un nome di proprietà) a cui possiamo dare una semantica arbitraria. Senza un modello, \q{pari} è solo un simbolo, e non ha alcun significato.
 
-Infine, è usuale nel linguaggio parlare di ogetti identificandoli indirettamente, tramite una dipendenza con altri ogetti. Di conseguenza sarà necessario avere modi di costruire espressioni che si riferiscono ad ogetti a partire da altri ogetti. Considerando ad esempio l'espresisone \q{Il cane di Socrate aveva 3 gambe}, la locuzione \q{il cane di Socrate} identifica un ogetto del dominio come farebbe un nome, ma senza nominarlo esplicitamente, ma identificandolo in funzione di un altro ogetto. Dunque possiamo rappresentarla sintatticamente con una funzione \(f\) che prende in input un ogetto del dominio, e restituisce un altro ogetto del dominio. Per quanto questo possa sembrare molto simile ad una proprietà, è importante notare che una proprietà è interpretata in un volore di verità, mentre una funzione in un ogetto del dominio. 
+Infine, è usuale nel linguaggio parlare di oggetti identificandoli indirettamente, tramite una dipendenza con altri oggetti. Di conseguenza sarà necessario avere modi di costruire espressioni che si riferiscono a oggetti a partire da altri oggetti. Considerando ad esempio l'espressione \q{Il cane di Socrate aveva 3 gambe}, la locuzione \q{il cane di Socrate} identifica un oggetto del dominio come farebbe un nome, ma senza nominarlo esplicitamente, ma identificandolo in funzione di un altro oggetto. Dunque possiamo rappresentarla sintatticamente con una funzione \(f\) che prende in ingresso un oggetto del dominio, e restituisce un altro oggetto del dominio. Per quanto questo possa sembrare molto simile a una proprietà, è importante notare che una proprietà è interpretata in un valore di verità, mentre una funzione in un oggetto del dominio. 
 
-La logica del prim'ordine permette dunque di parlare di ogetti di un dominio direttamente (nomi detti costanti) o indirettamente a partire di altri ogetti (funzioni), e di parlare di proprietà di tali ogetti o relazioni tra essi (predicati). Questo tipo di costruizione di nomi ci permette di creare un insieme infinito di nomi a partire da un insieme finito di costanti e funzioni.\footnote{Per avere un insieme infinito di termini sono sufficienti una costante e una funzione unaria. Interpretando la costante con il numero \(0\) e la funzione come la funzione successore, è possibile infatti rappresentare tutto \(\N\).} L'insieme di questi ogetti è detto insieme dei \keyword{termini}. Tali termini possono essere usati come argomenti di proprietà, relazioni o altre funzioni creando nuovi termini.
+La logica del prim'ordine permette dunque di parlare di oggetti di un dominio direttamente (nomi detti costanti) o indirettamente a partire di altri oggetti (funzioni), e di parlare di proprietà di tali oggetti o relazioni tra essi (predicati). Questo tipo di costruzione di nomi ci permette di creare un insieme infinito di nomi a partire da un insieme finito di costanti e funzioni.\footnote{Per avere un insieme infinito di termini sono sufficienti una costante e una funzione unaria. Interpretando la costante con il numero \(0\) e la funzione come la funzione successore, è possibile infatti rappresentare tutto \(\N\).} L'insieme di questi oggetti è detto insieme dei \keyword{termini}. Tali termini possono essere usati come argomenti di proprietà, relazioni o altre funzioni creando nuovi termini.
 
-\section{Sintassi}
+\section{Sintassi della Logica del Prim'Orine}
 
-Come già accennato nell'introduzione del capitolo, l'obiettivo è di arricchire la logica proposizionale per ottenere una granularità sufficiente a parlare oltre che di fatti a se stanti, anche di ogetti, che sia direttamente o indirettamente, e delle loro proprietà e relazioni. Per fare ciò dobbiamo iniziare dalla sintassi, la quale avrà bisogno in primo luogo di nuovi simboli \textit{non-logici} che colgano le differenze tra i vari tipi di componenti del discorso.
+Come già accennato nell'introduzione del capitolo, l'obiettivo è di arricchire la logica proposizionale per ottenere una granularità sufficiente a parlare oltre che di fatti a se stanti, anche di oggetti, che sia direttamente o indirettamente, e delle loro proprietà e relazioni. Per fare ciò dobbiamo iniziare dalla sintassi, la quale avrà bisogno in primo luogo di nuovi simboli \textit{non-logici} che colgano le differenze tra i vari tipi di componenti del discorso.
 
-\begin{definition}{Signature di \(L\)}
+\begin{definition}{Signature di un linguaggio del prim'ordine}
   Sia \(L\) un linguaggio del prim'ordine. La sua \keyword{signature} (segnatura) è una tripla \(\langle \ConstSyms, \PredSyms, \FuncSyms \rangle\) con 
   \begin{itemize}
     \item \(\ConstSyms\) insieme dei \keyword{simboli di costante}
@@ -27,23 +27,23 @@ Come già accennato nell'introduzione del capitolo, l'obiettivo è di arricchire
   \end{itemize}
 \end{definition}
 
-La signature del linguaggio funge quindi da alfabeto di base per la costruzione di stringhe dedite alla rappresentazione di ogetti, proprietà e relazioni. È importante notare che a questo livello si sta parlando ancora di semplici simboli sintattici, e non di ogetti, proprietà o relazioni veri e propri. Un simbolo \(f \in \FuncSyms\) non è una funzione, è un simbolo che può essere usato per costruire stringhe che rappresentano funzioni.
+La signature del linguaggio funge quindi da alfabeto di base per la costruzione di stringhe dedite alla rappresentazione di oggetti, proprietà e relazioni. È importante notare che a questo livello si sta parlando ancora di semplici simboli sintattici, e non di oggetti, proprietà o relazioni veri e propri. Un simbolo \(f \in \FuncSyms\) non è una funzione, è un simbolo che può essere usato per costruire stringhe che rappresentano funzioni.
 
-Per definire propriamente tali simboli, in particolare quelli di funzione e di predicato, abbiamo necessità di una descrizione formale di quanti ogetti del discorso coinvolgono, ovvero, da un punto di vista informatico, di quanti argomenti prendono in input. Tale quantità è detta \keyword{arietà} del simbolo, e viene formalmente definita come segue.
+Per definire propriamente tali simboli, in particolare quelli di funzione e di predicato, abbiamo necessità di una descrizione formale di quanti oggetti del discorso coinvolgono, ovvero, da un punto di vista informatico, di quanti argomenti prendono in ingresso. Tale quantità è detta \keyword{arietà} del simbolo, e viene formalmente definita come segue.
 
 \begin{definition}{Arietà di funzioni e predicati}
   Sia \(L\) un linguaggio del prim'ordine con signature \(\langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). 
   
-  Definiamo l'arietà come una funzione \(\arty: \FuncSyms\cup\PredSyms\to\N\). 
+  Definiamo l'\keyword{arietà} come una funzione \(\arty: \FuncSyms\cup\PredSyms\to\N\). 
   
   L'arietà è un numero naturale che indica il numero di argomenti che la funzione o il predicato richiede per essere applicato.
 \end{definition}
 
 In alcune formulazioni della logica del prim'ordine i simboli di costante sono trattati congiuntamente a quelli di funzione, in quanto possono essere visti come funzioni di arietà zero. In questo modo si ha un'unica categoria di simboli che rappresentano nomi di oggetti, siano essi costanti o funzioni. Nel nostro caso invece abbiamo deciso di trattarli separatamente, in quanto è più intuitivo pensare a simboli che rappresentano oggetti specifici del dominio (costanti) e simboli che rappresentano modi di costruire nuovi oggetti a partire da altri (funzioni).
 
-Con i simboli a disposizione, è possibile costruire stringhe che rappresentano ogetti del dominio, proprietà e relazioni tra essi. C'è da notare però che gli ogetti del dominio che possiamo descrivere sono sempre specifici, poiché non abbiamo modo, con i simboli a disposizione, di parlare di ogetti generici. Non saremmo infatti in grado di esprimere frasi come \q{Esiste un uomo che è mortale} poiché le costanti permettono solo di parlare di uomini specifici, e le funzioni permettono solo di costruire nuovi oggetti a partire da altri.
+Con i simboli a disposizione, è possibile costruire stringhe che rappresentano oggetti del dominio, proprietà e relazioni tra essi. C'è da notare però che gli oggetti del dominio che possiamo descrivere sono sempre specifici, poiché non abbiamo modo, con i simboli a disposizione, di parlare di oggetti generici. Non saremmo infatti in grado di esprimere frasi come \q{Esiste un uomo che è mortale} poiché le costanti permettono solo di parlare di uomini specifici, e le funzioni permettono solo di costruire nuovi oggetti a partire da altri.
 
-Di conseguenza, per concludere l'insieme dei simboli non logici, è necessario introdurre un ultimo insieme di simboli, ovvero quello delle variabili. Le variabili sono simboli che non rappresentano né oggetti specifici del dominio, né modi di costruire nuovi oggetti, ma rappresentano ogetti generici del dominio, di cui si dovrà specificare l'identità successivamente. Intuitivamente, rappresentano quelle parti del discorso in cui non è specificato a quale ogetto ci si riferisce, ma si parla in generale di un ogetto, o di un insieme di ogetti.
+Di conseguenza, per concludere l'insieme dei simboli non logici, è necessario introdurre un ultimo insieme di simboli, ovvero quello delle variabili. Le variabili sono simboli che non rappresentano né oggetti specifici del dominio, né modi di costruire nuovi oggetti, ma rappresentano oggetti generici del dominio, di cui si dovrà specificare l'identità successivamente. Intuitivamente, rappresentano quelle parti del discorso in cui non è specificato a quale oggetto ci si riferisce, ma si parla in generale di un oggetto, o di un insieme di oggetti.
 
 \begin{definition}{Variabili}
   Sia \(L\) un linguaggio del prim'ordine con signature \(\langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). 
@@ -51,9 +51,9 @@ Di conseguenza, per concludere l'insieme dei simboli non logici, è necessario i
   Definiamo l'insieme delle \keyword{variabili} come un insieme infinito e numerabile di simboli, disgiunto dagli altri simboli della signature, che indichiamo con \(\VarSyms\).
 \end{definition}
 
-A questo punto possiamo finalmente introdurre le due categorie sintattiche di cui la logica del prim'ordine si compone, ovvero i \keyword{termini} e le \keyword{formule ben formate}. I termini sono stringhe che rappresentano ogetti del dominio, mentre le formule ben formate sono stringhe che rappresentano fatti. Intuitivamente, i termini sono costruiti a partire da costanti, variabili e funzioni e saranno interpretati in ogetti del dominio, mentre le formule ben formate sono costruite a partire da predicati e termini e saranno interpretate in valori di verità.
+A questo punto possiamo finalmente introdurre le due categorie sintattiche di cui la logica del prim'ordine si compone, ovvero i \keyword{termini} e le \keyword{formule ben formate}. I termini sono stringhe che rappresentano oggetti del dominio, costruiti a partire da costanti, variabili e funzioni, mentre le formule ben formate sono stringhe che rappresentano fatti, e che quindi saranno interpretate in valori di verità.
 
-\begin{definition}{Termini di \(L\)}
+\begin{definition}{Termini di un linguaggio del prim'ordine}
   Sia \(L\) un linguaggio del prim'ordine con signature \(\Sigma = \langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). Definiamo l'insieme \(\Terms\) dei termini su \(\Sigma\) e \(\VarSyms\) insieme delle variabili tale che
   \begin{itemize}
     \item \(\VarSyms\subseteq \Terms\)
@@ -61,43 +61,46 @@ A questo punto possiamo finalmente introdurre le due categorie sintattiche di cu
     \item Se \(f\in\FuncSyms\), \(\arty(f)=n\) e \(t_1,\dots,t_n\in \Terms\), allora \(f(t_1,\dots,t_n)\in \Terms\)
   \end{itemize}
 
-  I termini che contengono almeno una variabile sono detti \keyword{termini aperti}, perché non associano dirrettamente un ogetto del dominio, ma dipendono da un'interpretazione che assegna un ogetto del dominio a ciascuna variabile. 
+  I termini che contengono almeno una variabile sono detti \keyword{termini aperti}, perché non associano direttamente un oggetto del dominio, ma dipendono da un'assegnamento che assegni un oggetto del dominio a ciascuna variabile. 
 
-  Dato un termine \(t\), indicheremo con \(\Var(t)\) l'insieme delle variabili che compaiono in \(t\). Se \(\Var(t)=\emptyset\), allora \(t\) è detto \keyword{termine chiuso} o \keyword{ground}, perché non dipende da un'interpretazione che assegna un ogetto del dominio a ciascuna variabile, ma è associato direttamente ad un ogetto del dominio tramite l'interpretazione dei simboli di costante e di funzione che compaiono in \(t\).
+  Dato un termine \(t\), indicheremo con \(\Var(t)\) l'insieme delle variabili che compaiono in \(t\). Se \(\Var(t)=\emptyset\), allora \(t\) è detto \keyword{termine chiuso} o \keyword{ground}, perché non dipende da un'assegnamento che assegni oggetti del dominio alle variabili, ma è associato direttamente a un oggetto del dominio tramite l'interpretazione dei simboli di costante e di funzione che compaiono in \(t\).
 \end{definition}
 
 A questo punto, con i termini a disposizione, è possibile costruire le formule ben formate, che rappresentano fatti. Le formule sono costruite a partire da predicati e termini, che rappresentano le formule atomiche, che possono essere combinate tra loro tramite i simboli logici.
 
-\begin{definition}{Formule atomiche di \(L\)}
-  Sia \(L\) un linguaggio del prim'ordine con signature \(\Sigma = \langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). Definiamo l'insieme delle formule atomiche su \(\Sigma\) e \(\VarSyms\) come l'insieme di stringhe che hanno la forma \(P(t_1,\dots,t_n)\) con \(P\in\PredSyms\), \(\arty(P)=n\) e \(t_1,\dots,t_n\in \Terms\).
+\begin{definition}{Formule atomiche di un linguaggio del prim'ordine}
+  Sia \(L\) un linguaggio del prim'ordine con signature \(\Sigma = \langle \ConstSyms, \PredSyms, \FuncSyms \rangle\).
+  
+  Sia quindi \(\VarSyms\) l'insieme delle variabili e \(\Terms\) l'insieme dei termini su \(\Sigma\) e \(\VarSyms\). Dato \(P\in\PredSyms\) con \(\arty(P)=n\) e \(t_1,\dots,t_n\in \Terms\), allora \(P(t_1,\dots,t_n)\) è una \keyword{formula} atomica su \(\Sigma\) e \(\VarSyms\), denotato con \(P(t_1,\dots,t_n)\in \AF[\Sigma,\VarSyms]\).\footnote{Quando la signature e l'insieme delle variabili sono chiari dal contesto o non rilevanti, indicheremo semplicemente con \(\AF\) l'insieme delle formule atomiche.}
+
 \end{definition}
 
-Per quanto riguarda i simboli logici, rispetto alla logica proposizionale, l'unica differenza è l'introduzione dei quantificatori, connessi al concetto di variabile. I quantificatori sono infatti simboli logici che permettono di caratterizzare le variabili riferendosi a tutti gli ogetti del dominio (quantificatore universale \(\forall\)) o ad almeno un oggetto del dominio (quantificatore esistenziale \(\exists\)) e permettendo dunque di dare un significato alle variabili senza dover passare per un'interpretazione che assegna un ogetto del dominio a ciascuna di esse.
+Per quanto riguarda i simboli logici, rispetto alla logica proposizionale, l'unica differenza è l'introduzione dei quantificatori, connessi al concetto di variabile. I quantificatori sono infatti simboli logici che permettono di caratterizzare le variabili riferendosi a tutti gli oggetti del dominio (quantificatore universale \(\forall\)) o ad almeno un oggetto del dominio (quantificatore esistenziale \(\exists\)) e permettendo dunque di dare un significato alle variabili senza dover passare per un'interpretazione che assegna un oggetto del dominio a ciascuna di esse.
 
 Possiamo dunque definire le formule ben formate come segue.
-\begin{definition}{Formule ben formate di \(L\)}
-  Sia \(L\) un linguaggio del prim'ordine con signature \(\Sigma = \langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). Diremo che \(\phi\) è una formula ben formata su \(\Sigma\) e \(\VarSyms\) se vale una delle seguenti condizioni:
+\begin{definition}{Formule ben formate di un linguaggio del prim'ordine}
+  Sia \(L\) un linguaggio del prim'ordine con signature \(\Sigma = \langle \ConstSyms, \PredSyms, \FuncSyms \rangle\). Diremo che \(\phi\) è una formula ben formata, denotato\footnote{Quando la signature e l'insieme delle variabili sono chiari dal contesto o non rilevanti, indicheremo semplicemente con \(\FOL\) l'insieme delle formule ben formate.} con \(\phi \in \FOL[\Sigma,\VarSyms]\) su \(\Sigma\) e \(\VarSyms\) se vale una delle seguenti condizioni:
   \begin{itemize}
-    \item \(\phi\) è una formula atomica;
-    \item \(\phi = \neg\psi\) con \(\psi\) formula ben formata;
-    \item \(\phi = \psi\circ\theta\) con \(\psi\) e \(\theta\) formule ben formate e \(\circ\in\{\land,\lor,\to\}\);
-    \item \(\phi = Qx\psi\) con \(Q\in\{\forall,\exists\}\), \(x\in\VarSyms\) e \(\psi\) formula ben formata.
+    \item \(\phi\in\AF[\Sigma,\VarSyms]\);
+    \item \(\phi = \neg\psi\) con \(\psi\in\FOL[\Sigma,\VarSyms]\);
+    \item \(\phi = \psi\circ\theta\) con \(\psi,\theta\in\FOL[\Sigma,\VarSyms]\) e \(\circ\in\{\land,\lor,\to\}\);
+    \item \(\phi = Qx.\psi\) con \(Q\in\{\forall,\exists\}\), \(x\in\VarSyms\) e \(\psi\in\FOL[\Sigma,\VarSyms]\).
   \end{itemize}
 
   Dato \(\phi\) una formula, denoteremo con \(\Var(\phi)\) l'insieme delle variabili che compaiono in \(\phi\). Se \(\Var(\phi)=\emptyset\), allora \(\phi\) è una formula \keyword{ground}.
 \end{definition}
 
-A differenza della logica proposizionale, in cui era possibile esprimere le formule con un unico albero sintattico, in questo caso è necessario distinguere tra alberi sintattici dei termini e delle formula, ma che nella pratica si comportano allo stesso modo.
+A differenza della logica proposizionale, in cui era possibile esprimere le formule con un unico albero sintattico, in questo caso sarà necessario distinguere tra alberi sintattici dei termini e delle formule, nonostante si comportino in modo molto simile.
 
 Per un termine l'albero sintattico avrà le foglie etichettate con simboli di costante o variabili, e i nodi interni etichettati con simboli di funzione. Per una formula invece le foglie saranno etichettate con formule atomiche, i nodi interni con operatori logici o quantificatori.
 
-Possiamo inoltre notare come, essendo che le formule ground non contengono variabili, non aggiungano molto rispetto alla logica proposizionale, poiché sono costruite sarebbe possibile sostituire ogni formula atomica con un simbolo proposizionale e ottenere così una formula proposizionale. La vera potenza della logica del prim'ordine è dunque data dalla possibilità di esprimere formule con variabili, che possono essere interpretate in ogetti del dominio.
+Possiamo inoltre notare come, essendo che le formule ground non contengono variabili, non aggiungano molto rispetto alla logica proposizionale, poiché sostituendo ogni formula atomica con un simbolo proposizionale è possibile ottenere una formula proposizionale equivalente. La vera potenza della logica del prim'ordine è dunque data dalla possibilità di esprimere formule con variabili, che possono essere interpretate in oggetti del dominio.
 
 Consideriamo però ora due formule con variabili \(\forall x, \forall y, P(x,y)\) e \(\forall y, P(x,y)\).
-La prima formula esprime una relazione che mette in relazione tutti gli ogetti del dominio, ed è facile da interpretare.
-Per la seconda invece l'interpretazione non è possibile immediatamente. La formula è infatti ambigua, perché l'unica cosa che è possibile dire su tale formula è che ogni ogetto \(y\) è in relazione \(P\) con qualcosa individuato dalla variabile \(x\) che non si sa a priori cosa sia.
+La prima formula esprime una relazione che mette in relazione tutti gli oggetti del dominio, ed è facile da interpretare.
+Per la seconda invece l'interpretazione non è possibile immediatamente. La formula è infatti ambigua, perché l'unica cosa che è possibile dire su tale formula è che ogni oggetto \(y\) è in relazione \(P\) con qualcosa individuato dalla variabile \(x\) che non si sa a priori cosa sia.
 
-Intuitivamente, la differenza sta nel fatto che nella prima formula tutte le variabili sono legate da un quantificatore, ovvero è nell'ambito (scope) di un quantificatore che parla di quelle variabili, ovvero la più piccola sottoformula che contiene il quantificatore. Nella seconda formula invece la variabile \(x\) è libera, ovvero non è nell'ambito di nessun quantificatore che parla di \(x\).
+Intuitivamente, la differenza sta nel fatto che nella prima formula tutte le variabili sono legate da un quantificatore, ovvero si trovano nell'ambito (scope) di un quantificatore che parla di quelle variabili, dove l'ambito è la più piccola sottoformula che contiene il quantificatore, o alternativamente, facendo riferimento all'albero sintattico, il sottoalbero radicato nel quantificatore. Nella seconda formula invece la variabile \(x\) è libera, ovvero non è nell'ambito di nessun quantificatore che parla di \(x\).
 
 \begin{definition}{Variabili libere e legate di una formula}
   Sia \(\phi\) una formula. Definiamo l'insieme \(FV(\phi)\) come:
@@ -117,7 +120,11 @@ Intuitivamente, la differenza sta nel fatto che nella prima formula tutte le var
   \end{cases}\]
 \end{definition}
 
-Possiamo notare che in generale \(FV(\phi)\cap BV(\phi)\neq\emptyset\). Infatti sarebbe più corretto parlare di occorrenze libere e legate di variabili, poiché la singola occorrenza di una variabile non può essere sia libera che legata, ma essendo che una variabile può avere più occorrenza si potrebbero avere sia occorrenze libere che legate della stessa variabile. Per esempio nella formula \(\forall x,(P(x,y)\land \forall y, Q(y,x))\) abbiamo che \(x\) è legata, mentre \(y\) è sia libera che legata.
+Intuitivamente l'insieme delle variabili libere è costruibile bottom-up con una visita in post-order dell'albero sintattico, aggiungendo tutte le variabili che si incontrano e rimuovendo quelle che vengono legate da un quantificatore. 
+
+Analogamente, l'insieme delle variabili legate è costruibile con una visita in pre-order dell'albero sintattico, aggiungendo tutte le variabili che vengono legate da un quantificatore.
+
+Possiamo notare inoltre che in generale \(FV(\phi)\cap BV(\phi)\neq\emptyset\). Questo perché, riprendendo l'analogia della vista dell'albero sintattico, una stessa variabile può apparire libera in un ramo dell'albero e legata in un altro ramo. Infatti sarebbe più corretto parlare di occorrenze libere e legate di variabili, poiché la singola occorrenza di una variabile non può essere sia libera che legata, ma essendo che una variabile può avere più occorrenza si potrebbero avere sia occorrenze libere che legate della stessa variabile. Per esempio nella formula \(\forall x,(P(x,y)\land \forall y, Q(y,x))\) abbiamo che \(x\) è legata, mentre \(y\) è sia libera che legata.
 
 \begin{definition}{Formule chiuse}
   Data una formula \(\phi\), se \(FV(\phi)=\emptyset\), allora \(\phi\) è una formula \keyword{chiusa} (\keyword{sentence}).
@@ -126,15 +133,15 @@ Possiamo notare che in generale \(FV(\phi)\cap BV(\phi)\neq\emptyset\). Infatti 
 
 Intuitivamente, per dare semantica alle formule chiuse sarà sufficiente un dominio del discorso e un'interpretazione che associ simboli sintattici a oggetti del dominio, proprietà e relazioni tra essi. Per le formule aperte invece, sarà necessario anche un'assegnamento che associ le variabili a oggetti del dominio, in modo da poter interpretare le variabili libere. Prima di passare alla trattazione formale della semantica però, vediamo come tale linguaggio ci permetta di esprimere concetti che non erano esprimibili in logica proposizionale, ignorando temporaneamente il concetto di interpretazione. Consideriamo come nostro dominio la teoria elementare dei numeri naturali, \((\N,+,\cdot,<,=)\).
 
-Il linguaggio per parlare di \(\N\) ha tipicamente la signature \(\Sigma = \langle \ConstSyms = \set{\overline{0}}, \FuncSyms=\set{\overline{\cdot}, \overline{+}, \overline{s}},\set{\overline{<}, \overline{=}} \rangle\). I simboli sono stati sottolineati per evidenziare la differenza tra simboli che hanno solo connotato sintattico senza alcun interpretazione, e l'interpretazione usuale di tali simboli. Sia le funzioni che i predicati hanno arietà \(2\), ad eccezione della funzione \(\underbar{s}\) che ha arietà \(1\). In questo linguaggio abbiamo un'unica costante, che per parlare effettivamente di \(\N\) sarebbe associata \(0\), unico elemento del dominio di cui si parla direttamente. Possiamo riferiri a tutti gli altri numeri però applicando la funzione \(\underbar{s}\) a \(0\) per ottenere \(1\), applicando \(\underbar{s}\) a \(1\) per ottenere \(2\), e così via. Ad esempio l'espressione \qi{\(2+2=4\)} è esprimibile come:
+Il linguaggio per parlare di \(\N\) ha tipicamente la signature \(\Sigma = \langle \ConstSyms = \set{\overline{0}}, \FuncSyms=\set{\overline{\cdot}, \overline{+}, \overline{s}},\set{\overline{<}, \overline{=}} \rangle\). I simboli sono stati sottolineati per evidenziare la differenza tra simboli che hanno solo connotato sintattico senza alcun interpretazione, e l'interpretazione usuale di tali simboli. Sia le funzioni che i predicati hanno arietà \(2\), a eccezione della funzione \(\underbar{s}\) che ha arietà \(1\). In questo linguaggio abbiamo un'unica costante, che per parlare effettivamente di \(\N\) sarebbe associata \(0\), unico elemento del dominio di cui si parla direttamente. Possiamo riferirci a tutti gli altri numeri però applicando la funzione \(\underbar{s}\) a \(0\) per ottenere \(1\), applicando \(\underbar{s}\) a \(1\) per ottenere \(2\), e così via. Ad esempio l'espressione \qi{\(2+2=4\)} è esprimibile come:
 \[\overline{+}(\overline{s}(\overline{s}(\overline{0})), \overline{s}(\overline{s}(\overline{0})))\overline{=} \overline{s}(\overline{s}(\overline{s}(\overline{s}(0))))\]
 
 Tale formula è chiusa, e in particolare è ground.
-Ovviamente per ora non abbiamo modo di garantire che il simbolo \(\overline{s}\) si comporti effettivamente come la funzione successore, ci servirà una sua interpretazione semantica o un modo per costurire propriamente una teoria, ovvero si specificarne le proprietà tramite altre formule.
+Ovviamente per ora non abbiamo modo di garantire che il simbolo \(\overline{s}\) si comporti effettivamente come la funzione successore, ci servirà una sua interpretazione semantica o un modo per costruire propriamente una teoria, ovvero si specificarne le proprietà tramite altre formule.
 
 Se volessimo esprimere l'espressione \qi{Ogni numero è maggiore o uguale a \(0\)}, potremmo usare la formula \(\forall x, \overline{0} \overline{<} x \lor \overline{0}\overline{=}x\). Ovviamente, tale concetto sarebbe esprimibile equivalentemente con \(\forall x, \neg(x\overline{<}\overline{0})\). Tali formule, contenendo variabili, non sono ground, ma sono chiuse.
 
-Possiamo pensare di caratterizzare anche meglio la funzione successiore esprimendo l'espressione \qi{Ogni numero diverso da \(0\) è il successore di qualche numero} con la formula \(\forall x, \neg(\overline{0}\overline{=}x)\to\exists y\st \overline{s}(y)\overline{=}x\). Se il simbolo \(\forall\) cattura intuitivamente il concetto di \q{ogni}, è meno chiaro da dove arrivi il simbolo \(\exists\). In questo caso, tale simbolo esprime il concetto di \qi{qualche}. 
+Possiamo pensare di caratterizzare anche meglio la funzione successore esprimendo l'espressione \qi{Ogni numero diverso da \(0\) è il successore di qualche numero} con la formula \(\forall x, \neg(\overline{0}\overline{=}x)\to\exists y\st \overline{s}(y)\overline{=}x\). Se il simbolo \(\forall\) cattura intuitivamente il concetto di \q{ogni}, è meno chiaro da dove arrivi il simbolo \(\exists\). In questo caso, tale simbolo esprime il concetto di \qi{qualche}. 
 
 Andiamo ora a caratterizzare\footnote{
   Questa caratterizzazione è anche detta assiomatizzazione, e intuitivamente ci permette di \q{forzare} il comportamento di un simbolo, limitando le interpretazioni che possiamo dare a quel simbolo, intuitivamente aggiungendo vincoli che rendano interpretazioni non desiderate non più valide. Tratteremo più avanti il concetto di teoria e assiomatizzazione, una volta padroneggiata la semantica. È importante però notare che non sempre sia possibile caratterizzare un simbolo in maniera univoca, e che spesso infatti le teorie ammettano più modelli oltre quello che vogliamo descrivere.
@@ -142,23 +149,23 @@ Andiamo ora a caratterizzare\footnote{
 
 Il potere espressivo della logica del prim'ordine è quindi molto maggiore di quello della logica proposizionale, ma questo ha anche aspetti negativi, come ad esempio l'indecidibilità della soddisfacibilità e della validità nella logica del prim'ordine.
 
-\section{Semantica}
+\section{Semantica della Logia del Prim'Ordine}
 
-Come anticipato, per caratterizzare la semantica della logica del prim'ordine sarà necessario introdurre in primo luogo il dominio del discorso e un'interpretazione che associ simboli sintattici a oggetti del dominio, proprietà e relazioni tra essi. Per fare ciò, introduciamo il concetto di struttura logica, che intuitivamente svolge un po' il ruolo del modello nella logica proposizionale, ma con una complessità maggiore, poiché la caratterizzazione semantica dei simboli sintattici da parte del modello non è più implicità nella definizione di soddisfacibilità, ma è esplicitamente definita tramite l'interpretazione. 
+Come anticipato, per caratterizzare la semantica della logica del prim'ordine sarà necessario introdurre in primo luogo il dominio del discorso e un'interpretazione che associ simboli sintattici a oggetti del dominio, proprietà e relazioni tra essi. Per fare ciò, introduciamo il concetto di struttura logica, che intuitivamente svolge un po' il ruolo del modello nella logica proposizionale, ma con una complessità maggiore, poiché la caratterizzazione semantica dei simboli sintattici da parte del modello non è più implicita nella definizione di soddisfacibilità, ma è esplicitamente definita tramite l'interpretazione. 
 
 \begin{definition}{Struttura \(\FOL\)}
   Una \keyword{struttura} semantica per un linguaggio del prim'ordine è una coppia \(M = \langle D, \mathcal{I} \rangle\) con \(D\) un insieme non vuoto detto \keyword{dominio}, e \(\mathcal{I}\) una \keyword{funzione di interpretazione} tale che:
   \begin{itemize}
     \item Per ogni \(c\in\ConstSyms\), \(\mathcal{I}(c)\in D\)
     \item Per ogni \(f\in\FuncSyms\) con \(\arty(f)=n\), \(\mathcal{I}(f) \in D^{(D^n)}\),  ovvero \(\mathcal{I}(f): D^n \to D\)
-    \item Per ogni \(P\in\PredSyms\) con \(\arty(P)=n\), \(\mathcal{I}(P)\subseteq D^n\) relazione \(n\)-aria su \(D\). Le \(n-\)uple apparteneneti a \(\mathcal{I}(P)\) soddisfano \(P\) in \(M\).
+    \item Per ogni \(P\in\PredSyms\) con \(\arty(P)=n\), \(\mathcal{I}(P)\subseteq D^n\) relazione \(n\)-aria su \(D\). Le \(n-\)uple appartenenti a \(\mathcal{I}(P)\) soddisfano \(P\) in \(M\).
   \end{itemize}
 \end{definition}
 
 Come anticipato, tale struttura è sufficiente a descrivere il significato e valutare ogni formula ground del linguaggio, ma non è sufficiente per valutare formule aperte, poiché in esse compaiono variabili libere che non sono interpretate direttamente dalla struttura, ma dipendono da un'interpretazione che associa le variabili a oggetti del dominio. Per valutare dunque formule aperte, è necessario formalizzare anche il concetto di assegnamento.
 
 \begin{definition}{Assegnamento di variabili}
-  Sia \(M = \langle D, \mathcal{I} \rangle\) una struttura semantica per un linguaggio del prim'ordine. Un'assegnamento è una funzione \(\sigma: \VarSyms\to D\) che assegna a ogni variabile un ogetto del dominio.
+  Sia \(M = \langle D, \mathcal{I} \rangle\) una struttura semantica per un linguaggio del prim'ordine. Un'assegnamento è una funzione \(\sigma: \VarSyms\to D\) che assegna a ogni variabile un oggetto del dominio.
 \end{definition}
 
 Adesso, con una struttura e un assegnamento, siamo in grado di valutare la verità di ogni formula del linguaggio, e quindi di definire il concetto di soddisfazione \(M,\sigma\models \phi\). Per poterlo fare però, avendo definito la struttura sintattica delle formule a partire da quella dei termini, dovremo prima di tutto definire l'interpretazione dei termini per poter definire quella delle formule. Per semplicità di notazione, fissata una struttura \(M=\langle D,\mathcal{I}\rangle\), denoteremo \(\mathcal{I}(c)\) con \(c^M\), \(\mathcal{I}(f)\) con \(f^M\) e \(\mathcal{I}(P)\) con \(P^M\).
@@ -188,7 +195,7 @@ A questo punto, possiamo finalmente definire il concetto di soddisfazione \(M,\s
   \end{itemize}
 \end{definition}
 
-Come per la logica proposizionale, per la relazione di soddisfazione, oltre che a una definizione basata su teoria degli insiemi, è possibile dare una definizione più algebrica, basata su assegnamenti e una fuzione di valutazione che, data una formula e un assegnamento di verità, restituisce un valore di verità. 
+Come per la logica proposizionale, per la relazione di soddisfazione, oltre che a una definizione basata su teoria degli insiemi, è possibile dare una definizione più algebrica, basata su assegnamenti e una funzione di valutazione che, data una formula e un assegnamento di verità, restituisce un valore di verità. 
 
 \begin{definition}{Valutazione}
 Sia \(M = \langle D, \mathcal{I} \rangle\) una struttura semantica per un linguaggio del prim'ordine e \(\sigma\) un assegnamento. Definiamo la funzione di valutazione \(\Val{M,\sigma}: \FOL \to \set{0,1}\) come segue:
@@ -244,11 +251,15 @@ Alternativamente, diremo che \(\phi \in \FOL\) è soddisfacibile se esiste una s
 
 Come già vista per la logica proposizionale, per \(\Gamma = \emptyset\), la conseguenza logica è equivalente alla validità.
 
-Alle volte tra i simboli logici si annovera anche il simbolo \(=\), con semantica fissata a prescindere dall'interpretazione del modello. La sua interpretazione è quella solità di identità, ovvero \(M,\sigma\models t_1 = t_2\) se e solo se \(\den{t_1}[M][\sigma] = \den{t_2}[M][\sigma]\). Ovviamente il primo \(=\) è solo un simbolo sintattico, non è   l'identità tra termini, ma solo un simbolo la cui interpretazione è l'identità tra ogetti del dominio, ovvero l'interpretazione dei termini. Ad esempio il termine \(3+4-2\) non è \textbf{identico} al termine \(5\), ma l'interpretazione usuale di \(\N\) ci poterebbe ad avere vera \(3+4-2 = 5\), poiché l'interpretazione di \(3+4-2\) e \(5\) è identica, ovvero \(5\).
+Alle volte tra i simboli logici si annovera anche il simbolo \(=\), con semantica fissata a prescindere dall'interpretazione del modello. La sua interpretazione è quella solita di identità, ovvero \(M,\sigma\models t_1 = t_2\) se e solo se \(\den{t_1}[M][\sigma] = \den{t_2}[M][\sigma]\). Ovviamente il primo \(=\) è solo un simbolo sintattico, non è   l'identità tra termini, ma solo un simbolo la cui interpretazione è l'identità tra oggetti del dominio, ovvero l'interpretazione dei termini. Ad esempio il termine \(3+4-2\) non è \textbf{identico} al termine \(5\), ma l'interpretazione usuale di \(\N\) ci poterebbe ad avere vera \(3+4-2 = 5\), poiché l'interpretazione di \(3+4-2\) e \(5\) è identica, ovvero \(5\).
 
-Tale aggiunta è fatta poiché per quanto sia possibile assiomatizzare\footnote{Per assiomatizzazione si intende l'aggiunta di formule da soddisfare per un modello che descrivono le proprietà di un qualche simbolo non logico. Una forma di assiomatizzazione è quello che abbiamo fatto per \(\overline{<}\) nell'esempio sulla teoria dei numeri} il simbolo \(=\) in modo che forzi ogni modello a interpretare \(=\) come una relazione di equivalenza, ma non è possibile assiomatizzare \(=\) in modo che forzi ogni modello a interpretare \(=\) esattamente come l'identità, ovvero la relazione di equivalenza più restrittiva, in quanto non è possibile escludere modelli in cui \(=\) è interpretato come una relazione di equivalenza più ampia dell'identità. Questo è il motivo per cui spesso in un contesto matematico si considera \(=\) come un simbolo logico con interpretazione fissata all'identità, anche se questa scelta non porta a poter dimostrare più teoremi dell'assiomatizzazione di \(=\) come una relazione di equivalenza.
+Tale aggiunta è fatta poiché per quanto sia possibile assiomatizzare\footnote{Per assiomatizzazione si intende l'aggiunta di formule da soddisfare per un modello che descrivono le proprietà di un qualche simbolo non logico.
+Una forma di assiomatizzazione è quello che abbiamo fatto per \(\overline{<}\) nell'esempio sulla teoria dei numeri} il simbolo \(=\) in modo che forzi ogni modello a interpretare \(=\) come una relazione di equivalenza, ma non è possibile assiomatizzare \(=\) in modo che forzi ogni modello a interpretare \(=\) esattamente come l'identità, ovvero la relazione di equivalenza più restrittiva, in quanto non è possibile escludere modelli in cui \(=\) è interpretato come una relazione di equivalenza più ampia dell'identità. Questo è il motivo per cui spesso in un contesto matematico si considera \(=\) come un simbolo logico con interpretazione fissata all'identità, anche se questa scelta non porta a poter dimostrare più teoremi dell'assiomatizzazione di \(=\) come una relazione di equivalenza.
+
+\section{Proprietà e Sostituzioni nel Prim'Ordine}
 
 Passiamo dunque a dimostrare alcune proprietà della logica del prim'ordine, che ci porteranno a dimostrare risultati simili ad alcuni ottenuti per la logica proposizionale, come ad esempio la possibilità di limitarsi a considerare le sole variabili presenti nelle formule, o il concetto di sostituzione.
+
 
 \begin{proposition}[label=prop:term_interpretation_independence]{}
   Sia \(t \in T\) tale che \(\Var(t) = \set{x_1, \ldots, x_n}\) e siano \(\sigma_1\) e \(\sigma_2\) assegnamenti tali che \(\sigma_1(x_i) = \sigma_2(x_i)\) per ogni \(i\in\{1,\ldots,n\}\). Allora \(\den{t}[M][\sigma_1] = \den{t}[M][\sigma_2]\) per ogni struttura \(M\).
@@ -267,10 +278,13 @@ In termini intuitivi, questa proposizione ci sta dicendo che l'interpretazione d
 
 Estendiamo dunque questo risultato alle formule, dimostrando che la relazione di soddisfazione \(M,\sigma\models \phi\) dipende solo dall'interpretazione delle variabili libere che compaiono in \(\phi\), e non da altre variabili che potrebbero essere presenti in altri termini o formule.
 
-\begin{proposition}
+\begin{proposition}[label=prop:satisfaction_independence]{Indipendenza della soddisfazione dalle variabili non libere}
   Sia \(\phi\in\FOL\) con \(FV(\phi) = \set{x_1, \ldots, x_n}\) e \(\sigma_1,\sigma_2\) con \(\sigma_1(x_i) = \sigma_2(x_i)\) per ogni \(i\in\{1,\ldots,n\}\), allora:
   \[M,\sigma_1\models \phi \iff M,\sigma_2 \models \phi\]
   per ogni struttura \(M\).
+\end{proposition}
+
+\begin{proof}
 
   Per tutti i casi induttivi che non coinvolgono quantificatori, la tesi segue dal fatto che la soddisfacibilità di \(\phi\) dipende solo dalla soddisfacibilità delle sue sottoformule, e quindi si può applicare l'ipotesi induttiva in maniera diretta.
   
@@ -281,12 +295,12 @@ Estendiamo dunque questo risultato alle formule, dimostrando che la relazione di
   Sia invece \(x\in FV(\psi)\). Fissato un \(d\) si ha che \(\sigma_1[x\mapsfrom d](x) = d = \sigma_2[x\mapsfrom d](x)\), e per ogni \(i\in\{1,\ldots,n\}\), \(\sigma_1[x\mapsfrom d](x_i) = \sigma_2[x\mapsfrom d](x_i)\) per ipotesi induttiva, e quindi \(M,\sigma_1[x\mapsfrom d]\models \psi\) se e solo se \(M,\sigma_2[x\mapsfrom d]\models \psi\) per ogni \(d\in D\), e quindi \(M,\sigma_1\models \phi\) se e solo se \(M,\sigma_2\models \phi\).
 
   Per il caso \(\phi = \exists x\st \psi\) il ragionamento è del tutto analogo, considerando un qualche \(d\in D\) invece che ogni \(d\in D\).
-\end{proposition}
+\end{proof}
 
 
 Come già accennato in precedenza, questa proprietà è in un certo senso l'analogo della proprietà degli assegnamenti proposizionali per cui due assegnamenti che assegno lo stesso valore almeno alle variabili proposizionali che compaiono in una formula, assegnano lo stesso valore alla formula. In altre parole, la soddisfacibilità di una formula dipende solo dall'interpretazione delle variabili che compaiono in essa.
 
-\begin{corollary}
+\begin{corollary}{}
   Sia \(\phi\in\FOL\) chiusa. Allora per ogni struttura \(M\) e per ogni coppia di assegnamenti \(\sigma, \sigma'\),  \(M,\sigma\models \phi \iff M,\sigma'\models \phi\). In altre parole, la soddisfacibilità in \(M\) equivale alla verità in \(M\) per le formule chiuse.
 \end{corollary}
 
@@ -307,7 +321,7 @@ Passiamo dunque a definire il concetto di sostituzione, che ci permetterà di so
 
 Consideriamo ad esempio il termine \(t = f(g(x,y), h(z,x))\). Applicando la trasformazione \(\subs{t}{x}{f(0)}\) otteniamo \(f(g(f(0),y), h(z,f(0)))\).
 
-Ragionando sulla sostituzione nella logica proposzionale avevamo notato che l'applicazione di una sostituzione che agiva su più proposizioni atomiche non era composizionale, e avveniva quindi in parallelo. Di conseguenza per ottenere un analogo della sostituzione proposizionale, una sostituzione che lavora su più variabili non andrebbe definita come composizione di sostituzioni, bensì come \({(t)}^{x_1,\ldots,x_k}_{t_1',\ldots,t_k'}\), la cui formalizzazione è analoga al caso singolo, ma con un caso base per variabile. Questa necessità è dovuta alla possibilità che un termine sostituito \(t_i'\) contenga una variabile \(x_j\) con \(i<j\). Con un applicazione sequenziale, e quindi composizionale si avrebbe che anche le occorrenze di \(x_j\) in \(t_i'\) verrebbero sostituite, e quindi si avrebbe un comportamento diverso da quello che si avrebbe con un'applicazione parallela, che invece non sostituisce le occorrenze di \(x_j\) in \(t_i'\).
+Ragionando sulla sostituzione nella logica proposizionale avevamo notato che l'applicazione di una sostituzione che agiva su più proposizioni atomiche non era composizionale, e avveniva quindi in parallelo. Di conseguenza per ottenere un analogo della sostituzione proposizionale, una sostituzione che lavora su più variabili non andrebbe definita come composizione di sostituzioni, bensì come \({(t)}^{x_1,\ldots,x_k}_{t_1',\ldots,t_k'}\), la cui formalizzazione è analoga al caso singolo, ma con un caso base per variabile. Questa necessità è dovuta alla possibilità che un termine sostituito \(t_i'\) contenga una variabile \(x_j\) con \(i<j\). Con un applicazione sequenziale, e quindi composizionale si avrebbe che anche le occorrenze di \(x_j\) in \(t_i'\) verrebbero sostituite, e quindi si avrebbe un comportamento diverso da quello che si avrebbe con un'applicazione parallela, che invece non sostituisce le occorrenze di \(x_j\) in \(t_i'\).
 
 Definita l'applicazione di sostituzioni ai termini è facilmente definibile l'estensione dell'applicazione di sostituzioni alle formule, con la definizione seguente:
 
@@ -327,7 +341,7 @@ Ovviamente, la sostituzione è applicata solo alle occorrenze libere di \(x\) in
 Consideriamo ad esempio la formula \(\phi = \exists y\st R(x,y) \land P(x,z)\). Applicando la sostituzione \(\subs{\phi}{x}{f(z)}\) otteniamo \(\exists y\st R(f(z),y) \land P(f(z),z)\).
 Utilizzando invece la sostituzione \(\subs{\phi}{x}{y}\) otteniamo \(\exists y\st R(y,y) \land P(y,z)\).
 
-Questa seconda sostituzione però è problematica, in quanto \(y\) è una variabile legata, e quindi la sostituzione ha trasformato una variabile libera in una variabile legata. Tale tipo di sostituzione è dibattuta nella comunità logica. Parte della letteratura infatti esclude la possibilità di tale sostituzione direttamente nella definizione di sostituzione stessa. Nel nostro caso invece, menterremo la possibilità di avere tali sostituzioni, ma dettaglieremo successivamente come gestire correttamente tali situazioni.
+Questa seconda sostituzione però è problematica, in quanto \(y\) è una variabile legata, e quindi la sostituzione ha trasformato una variabile libera in una variabile legata. Tale tipo di sostituzione è dibattuta nella comunità logica. Parte della letteratura infatti esclude la possibilità di tale sostituzione direttamente nella definizione di sostituzione stessa. Nel nostro caso invece, manterremo la possibilità di avere tali sostituzioni, ma dettaglieremo successivamente come gestire correttamente tali situazioni.
 
 Infine, applicando la sostituzione \(\subs{\phi}{y}{f(z)}\) avremmo \(\exists y\st R(x,y) \land P(x,z)\), poiché \(y\) non è una variabile libera in \(\phi\), e quindi la sostituzione non ha effetto su \(\phi\).
 
@@ -380,12 +394,11 @@ Per evitare questo problema, è necessario restringere le ipotesi del teorema, r
 
 In altre parole diremo che \(t\) è libero per \(x\) in \(\phi\) se tutte le variabili presenti in \(t\) sono libere in \(\phi\) nei contesti in cui è libera \(x\).
 
-A questo punto, possiamo riformulare il teorema nella sua varsione corretta.
+A questo punto, possiamo riformulare il teorema nella sua versione corretta.
 
-\begin{theorem}{Sostituzione}
+\begin{theorem}[namedlabel={thm:fol_substitution}{Sostituzione}]{Sostituzione}
   Dati \(\phi\in\FOL\), \(t\in T\), \(\sigma\) un assegnamento, e \(M\) una struttura semantica e \(x\in\VarSyms\) allora
   \[M,\sigma \models \subs{\phi}{x}{t} \iff M,\sigma[x\mapsfrom \den{t}[M][\sigma]] \models \phi\]
-
   se \(t\) è libero per \(x\) in \(\phi\).
 \end{theorem}
 
@@ -402,16 +415,204 @@ A questo punto, possiamo riformulare il teorema nella sua varsione corretta.
   Consideriamo dunque il caso \(\phi = \forall y, \psi\).
   Si ha dunque che \(M,\sigma\models \subs{\forall y, \psi}{x}{t}\). Nel caso \(x=y\) si ha che \(x\not\in FV(\psi)\) e quindi \(\subs{\forall y, \psi}{x}{t} = \forall y, \psi\), e quindi \(M,\sigma\models \subs{\forall y, \psi}{x}{t}\) se e solo se \(M,\sigma\models \forall y, \psi\), ovvero se e solo se \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \forall y, \psi\) poiché gli assegnamenti operano solo sulle variabili libere e quindi cambiare \(\sigma\) su \(x\) non ha impatto sulla soddisfacibilità di \(\forall y, \psi\) che non contiene \(x\) come variabile libera.
 
-  Veniamo duqnue al caso \(x\neq y\). In questo caso, per definizione di sostituzione, si ha che
+  Veniamo dunque al caso \(x\neq y\). In questo caso, per definizione di sostituzione, si ha che
   \[M,\sigma\models \subs{\forall y, \psi}{x}{t} \iff M,\sigma\models \forall y, \subs{\psi}{x}{t}\]
-  che per semantica di \(\forall\) è equivalente a \(M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{t}\) per ogni \(d\in D\). Essendo \(\psi\) sottoformula di \(\phi\) è possibile applicare l'ipotesi induttiva, e quindi, per ogni \(d\in D\), avere\footnote{La notazione \(\sigma[x\mapsfrom d][y\mapsfrom d']\) indica la concatenzaione di due cambiamenti di assegnamento. Essendo L'operazione di cambiamento di assegnamento intuitivamente una \q{sovrascrittura} dell'assegnamento in un punto, se più cambiamenti di assegnamento sovrascrivono lo stesso punto, allora l'ultimo cambiamento di assegnamento è quello che ha effetto. Di conseguenza non è commutativa.}
+  che per semantica di \(\forall\) è equivalente a \(M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{t}\) per ogni \(d\in D\). Essendo \(\psi\) sottoformula di \(\phi\) è possibile applicare l'ipotesi induttiva, e quindi, per ogni \(d\in D\), avere\footnote{La notazione \(\sigma[x\mapsfrom d][y\mapsfrom d']\) indica la concatenazione di due cambiamenti di assegnamento. Essendo L'operazione di cambiamento di assegnamento intuitivamente una \q{sovrascrittura} dell'assegnamento in un punto, se più cambiamenti di assegnamento sovrascrivono lo stesso punto, allora l'ultimo cambiamento di assegnamento è quello che ha effetto. Di conseguenza non è commutativa.}
   \[M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{t} \iff M,\sigma[y\mapsfrom d]\left[x\mapsfrom \den{t}[M][\sigma[y\mapsfrom d]]\right]\models \psi\]
 
-  Vorremmo arrivare a mostrare che tale ogetto è equivalente a \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \forall y,\psi\) che per semantica equivale a \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]][y\mapsfrom d]\models \psi\) per ogni \(d \in D\).
+  Vorremmo arrivare a mostrare che tale oggetto è equivalente a \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \forall y,\psi\) che per semantica equivale a \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]][y\mapsfrom d]\models \psi\) per ogni \(d \in D\).
   
-  Questo nuovo scrittura è molto simile alla precedente, ma varia nell'ordine di applicazione dei cambiamenti di assegnamento, oltre che nell'assegnamento applicato nell'interpretazione di \(t\). Di conseguenza non è banale mostrare che siano uguali. Tuttavia, se \(y\) non è in \(t\) allora l'ordine diventa irrilevante\footnote{ciò accade poiché sostituendo prima \(x\) non verranno aggiunte istanze di \(y\) da sostituire, e sostituire prima \(y\) introduce solo termini ground, su cui non è possibile applicare alcuna sostituzione}, e risulta che \(\llbracket t\rrbracket^M_{\sigma[y\mapsfrom d]} = \llbracket t\rrbracket^M_{\sigma}\) grazie alla \Cref{prop:term_interpretation_independence}.
+  Questo nuovo scrittura è molto simile alla precedente, ma varia nell'ordine di applicazione dei cambiamenti di assegnamento, oltre che nell'assegnamento applicato nell'interpretazione di \(t\). Di conseguenza non è banale mostrare che siano uguali. Tuttavia, se \(y\) non è in \(t\) allora l'ordine diventa irrilevante\footnote{Ciò accade poiché sostituendo prima \(x\) non verranno aggiunte istanze di \(y\) da sostituire, e sostituire prima \(y\) introduce solo termini ground, su cui non è possibile applicare alcuna sostituzione}, e risulta che \(\llbracket t\rrbracket^M_{\sigma[y\mapsfrom d]} = \llbracket t\rrbracket^M_{\sigma}\) grazie alla \Cref{prop:term_interpretation_independence}.
 
   Per ipotesi sappiamo che \(t\) è libero per \(x\) in \(\phi\). Ma essendo che \(y\) è legata in \(\phi\), si ha necessariamente che\(t\) non può contenere \(y\) come variabile, altrimenti \(t\) conterrebbe una variabile legata in \(\phi\) in uno scope in cui \(x\) non lo è. Di conseguenza l'ordine dei cambi di assegnamento diventa irrilevante e gli assegnamenti usati per l'interpretazione di \(t\) sono equivalenti, e quindi si ha la tesi.
 
   Il caso \(\phi = \exists y\st \psi\) è analogo al caso \(\phi = \forall y, \psi\) a meno della locuzione \q{per ogni \(d\in D\)} che diventa \q{per qualche \(d\in D\)}, avendo la tesi anche in questo caso.
 \end{proof}
+
+
+\subsection{Equivalenze notevoli}
+
+Consideriamo adesso delle equivalenze notevoli tra formule di \(\FOL\), ovvero formule soddisfatte esattamente dalle stesse coppie \(M, \sigma\) di strutture e assegnamenti.
+
+Alcune risultano abbastanza ovvie, come la dualità dei quantificatori, ovvero \(\forall x,\phi \equiv \neg \exists x\st \neg \phi\) e \(\exists x\st \phi \equiv \neg\forall x, \neg \phi\).
+
+Infatti, \(M,\sigma\models \forall x,\phi\) se e solo se per ogni \(d\in D\), \(M,\sigma[x\mapsfrom d]\models \phi\), il che è equivalente a dire che non esiste alcun \(d\in D\) tale che \(M,\sigma[x\mapsfrom d]\not\models \phi\), ovvero non esiste alcun \(d\in D\) tale che \(M,\sigma[x\mapsfrom d]\models \neg \phi\), il che significa precisamente \(M,\sigma\not\models \exists x\st \neg \phi\), da cui \(M,\sigma\models \neg \exists x\st \neg \phi\). L'equivalenza duale segue per ragionamento analogo.
+
+Veniamo quindi a equivalenze più interessanti. Iniziamo da \(\forall x, (\phi_1 \land \phi_2) \equiv \forall x, \phi_1 \land \forall x, \phi_2\), ovvero che il quantificatore universale distribuisce sulla congiunzione. Tale equivalenza è ovvia se si considera la semantica tramite funzione di valutazione, poiché l'interpretazione del quantificatore universale era un minimo, in questo caso di una congiunzione, che è anch'essa un minimo. Ci troviamo quindi davanti a due minimi di minimi, di cui chiaramente l'ordine non ha importanza. Di contro, si ha un'equivalenza analoga per il quantificatore esistenziale con la disgiunzione, ovvero \(\exists x\st (\phi_1 \lor \phi_2) \equiv \exists x\st \phi_1 \lor \exists x\st \phi_2\).
+
+Chiaramente \(\forall x, (\phi_1 \lor \phi_2) \not\equiv \forall x, \phi_1 \lor \forall x, \phi_2\) perché una è più restringente dell'altra, ma vale una relazione di implicazione, ovvero \(\forall x,\phi_1 \lor \forall x, \phi_2 \implies \forall x, (\phi_1 \lor \phi_2)\). Questo perché presi qualsiasi \(M\) e \(\sigma\), se \(M,\sigma\models\forall x,\phi_1 \lor \forall x, \phi_2\) allora per semantica \(M,\sigma\models \forall x,\phi_1\) o \(M,\sigma\models\forall x, \phi_2\). 
+
+Senza perdita di generalità, supponiamo che \(M,\sigma\models\forall x,\phi_1\). Allora per semantica, per ogni \(d\in D\), \(M,\sigma[x\mapsfrom d]\models \phi_1\), e quindi \(M,\sigma[x\mapsfrom d]\models \phi_1 \lor \phi_2\) per ogni \(d\in D\), e quindi \(M,\sigma\models \forall x, (\phi_1 \lor \phi_2)\). 
+
+Per mostrare che l'altra implicazione non vale, dobbiamo passare per la semantica di \(\implies\), che in particolare è \(\phi \implies\psi\) se e solo se, per ogni coppia \(M, \sigma\), \(M,\sigma\models \phi \implies M,\sigma\models \psi\). 
+
+Ovviamente la sua negazione sarà equivalente a, per qualche coppia \(M, \sigma\), \(M,\sigma\models \phi\) e \(M,\sigma\not\models \psi\). Di conseguenza, ci basta trovare il cosiddetto \keyword{contromodello}, ovvero un modello che soddisfa un controesempio alla tesi. 
+
+In particolar modo basterà avere \(M\) che contenga un \(d \in D\) che soddisfi \(\phi_1\) e non \(\phi_2\) e un \(d' \in D\) che soddisfi \(\phi_2\) e non \(\phi_1\). Chiaramente \(M,\sigma\models \forall x, (\phi_1 \lor \phi_2)\) ma \(M,\sigma\not\models \forall x, \phi_1 \lor \forall x, \phi_2\).
+
+È possibile fare un ragionamento duale per mostrare che 
+\[\exists x\st( \phi_1 \land \phi_2) \implies \exists x\st \phi_1 \land \exists x\st \phi_2\]
+e
+\[\exists x\st (\phi_1 \land \phi_2 )\centernot\implies \exists x\st \phi_1 \land \exists x\st \phi_2\]
+
+In alcuni casi però è possibile distribuire i quantificatori sugli operatori logici non a loro affini. Consideriamo ad esempio 
+\[\exists x\st(\phi_1 \land \phi_2) \equiv \exists x\st( \phi_1) \land \phi_2\]
+con \(x \notin FV(\phi_2)\).
+
+Ciò è vero perché quantificare su una variabile non presente in una formula non influenza la verità della formula stessa.
+
+Infatti \(\exists x\st\phi\iff M,\sigma \models \exists x\st\phi \iff M,\sigma[x\mapsfrom d] \models \phi \) per qualche \(d\in D\). Se \(x \notin FV(\phi)\) allora \(\sigma(y)=\sigma[x\mapsfrom d](y)\) per ogni \(y \in FV(\phi)\), dunque dalla \Cref{prop:satisfaction_independence} si ha\(M,\sigma \models \phi\) se e solo se \(M,\sigma[x\mapsfrom d] \models \phi\). Di conseguenza, \(M,\sigma \models \exists x\st\phi\) se e solo se \(M,\sigma \models \phi\).
+
+La stessa cosa accade col quantificatore universale e \(\lor\), ovvero
+\[\forall x, (\phi_1 \lor \phi_2) \equiv \forall x, \phi_1 \lor \phi_2\]
+con \(x \notin FV(\phi_2)\).
+
+Inoltre si ha che, con \(x \notin FV(\phi_1)\),
+\[\forall x, (\phi_1 \to \phi_2) \equiv \phi_1 \to \forall x, \phi_2\]
+e analogamente
+\[\exists x\st (\phi_1 \to \phi_2) \equiv \phi_1 \to \exists x\st \phi_2\]
+
+Se invece \(x \notin FV(\phi_2)\) allora valgono
+\[\forall x, (\phi_1 \to \phi_2) \equiv (\exists x\st \phi_1 )\to \phi_2\]
+e
+\[\exists x\st (\phi_1 \to \phi_2) \equiv (\forall x, \phi_1 )\to \phi_2\]
+
+Questo perché 
+\[\forall x, (\phi_1 \to \phi_2) \equiv \forall x, (\neg \phi_1 \lor \phi_2) \equiv \forall x, (\neg \phi_1 )\lor \phi_2 \equiv \neg (\forall x, \neg \phi_1) \to \phi_2 \equiv (\exists x\st \phi_1)\to \phi_2\]
+
+Il ragionamento è ovviamente analogo per il caso esistenziale.
+
+In generale dimostrare la validità di una formula è indecidibile, e lo vedremo più avanti codificando il problema della fermata, ma in alcuni casi la regolarità dei modelli che possono soddisfare una tale formula ci permette di esplorarli in tempo finito.
+
+Prendiamo ad esempio la formula
+
+\[\phi \eqdef (\exists x\st A(x)\to \exists x\st B(x))\to \forall x, (A(x)\to B(x))\]
+
+Essendo la validità una proprietà universale, il modo più facile per dimostrarla e verificare che non esistano controesempi.
+In questo caso vuol dire mostrare che non esistono modelli che la falsificano.
+
+Avendo \(\phi\) l'implicazione come operatore principale, un modello \(M\) che la falsifica deve soddisfare \(\exists x\st A(x)\to \exists x\st B(x)\) e falsificare \(\forall x, (A(x)\to B(x))\).
+
+Inoltre \(M\) per soddisfare \(\exists x\st A(x)\to \exists x\st B(x)\) deve far sì che valga \(M,\sigma\not\models \exists x\st A(x)\) oppure \(M,\sigma \models \exists x\st B(x)\). 
+
+Ora per non soddisfare \(\exists x\st A(x)\) la struttura deve avere \(A^M =\emptyset\) ma non essere vuoto. Ora però in tali strutture chiaramente nessun punto soddisfa \(A\), quindi è soddisfatta \(\forall x, \neg A(x)\) e quindi è soddisfatta la conclusione \(\forall x, (A(x)\to B(x))\). 
+
+Di conseguenza, se un contromodello esiste, non è grazie al primo caso.
+
+Passando al secondo, l'unica cosa che sappiamo da \(M,\sigma\models \exists x\st B(x)\) è che \(M\) è tale per cui \(B^M \neq \emptyset\). Ora chiaramente possiamo trovare una struttura con queste proprietà che non soddisfa la conclusione \(\forall x, (A(x)\to B(x))\), in particolare con \(M\) che contiene un elemento \(d\) che soddisfa \(A\) e non \(B\). A questo punto abbiamo trovato un controesempio, da cui si ha che la formula non è valida. Ma il primo caso ci ha detto che ci sono delle strutture che la soddisfano, quindi è soddisfacibile.
+
+Modifichiamo ora la formula in 
+\[\phi \eqdef (\exists x\st A(x)\to \forall x\st B(x))\to \forall x, (A(x)\to B(x))\]
+e analizziamola in modo analogo.
+
+Il primo caso è rimasto identico, ma nel secondo i modelli che soddisfano \(\forall x\st B(x)\) sono tali che \(B^M = D\). Ma questo chiaramente soddisfa \(\forall x, (\neg A(x)\lor B(x))\) perché \(\forall x, (\neg A(x)) \lor \forall x, B(x) \implies \forall x, (\neg A(x)\lor B(x))\). Quindi non è possibile trovare un controesempio, e di conseguenza, la formula è valida. Ovviamente è anche soddisfacibile, poiché ogni formula valida è anche soddisfacibile.
+
+Consideriamo ora un caso in cui la struttura principale non è booleana.
+Con \(Hat\) predicato vero per individui che indossano un cappello consideriamo le due formule
+\[\exists x\st (Hat(x) \to \forall y, Hat(y))\]
+\[(\exists x\st, Hat(x))\to(\forall y, Hat(y))\]
+
+La prima formula potrebbe essere la traduzione di \qi{C'è un individuo tale che se egli ha il cappello allora tutti hanno il cappello}. L'altra invece potrebbe essere la traduzione di \qi{Se c'è un individuo che ha il cappello, allora tutti hanno il cappello}. In linguaggio naturale, possono essere percepite come con lo stesso significato, ma non è così. In oltre, la seconda è chiaramente non valida, perché per soddisfare la premessa si deve avere una struttura \(M\) con \(Hat^M\subset D\), ma è chiaro che trovare un \(M\) con questa struttura che non soddisfa la conclusione, basta avere un elemento che soddisfa \(\neg Hat\).
+
+L'altra invece è valida poiché vacua. In questo caso infatti possiamo dividere le strutture in due gruppi, una prima che falsifica \(Hat(x)\) e l'altra che verifica \(\forall y, Hat(y)\). In particolare nel primo caso avremo che c'è un elemento che soddisfa \(\neg Hat(x)\) e quindi l'implicazione e quindi il quantificatore esistenziale. Se non si ha che la struttura è tale che non è vero \(Hat^M \subset D\), e dunque necessariamente \(Hat^M = D\), e quindi è chiaramente soddisfatto \(\forall y, Hat(y)\), e quindi il quantificatore esistenziale è irrilevante per la soddisfazione. Quindi in ogni caso la formula è soddisfatta, quindi è valida.
+
+Infine, prima di passare alla trattazione del calcolo dei predicati, analizziamo con brevi esempi come la logica del prim'ordine ci permetta, una volta fissata una segnatura, di poter formalizzare e tradurre il linguaggio naturale. Quest'analisi ci permetterà di evidenziare alcune caratteristiche e correlazioni tipiche tra simboli logici, che ci aiuteranno ad avere una maggiore dimestichezza con la logica del prim'ordine, e a comprendere meglio le sue potenzialità e limitazioni.
+
+\section{Esempi di formalizzazione del linguaggio naturale}
+
+Cominciamo con un primo semplice esempio di traduzione. Consideriamo la frase:
+
+\begin{quote}
+  \q{I cani che abbaiano non hanno un proprietario}
+\end{quote}
+
+In primo luogo, va stabilita la segnatura del linguaggio, ovvero i simboli utilizzabili. In questo saranno necessari un simbolo di predicato unario \(C\) interpretato vero per gli oggetti del dominio che sono cani, un simbolo di predicato unario \(A\) interpretato vero per gli oggetti che abbaiano e infine il concetto di proprietario, che può essere rappresentato sia come proprietà del singolo oggetto, ma in maniera più completa anche come una relazione binaria \(P\) che lega un cane al suo proprietario.
+A questo punto possiamo facilmente esprimere la frase in logica del prim'ordine con la formula
+\[\forall x, ((C(x) \land A(x)) \to \not\exists y\st P(y,x))\]
+
+È importante notare che in questa frase è presente un artificio tipico del linguaggio naturale, ovvero la presenza di una quantificazione universale implicita. Quando si parla di una proprietà di una categoria, come in questo caso i cani che abbaiano, si sott'intende che ogni individuo della categoria soddisfa quella proprietà, e quindi si ha una quantificazione universale implicita, che tendenzialmente quantifica un'implicazione, la cui premessa denota la categoria, e la conseguenza la proprietà vorremmo essere vera. In questo caso, la frase \q{I cani che abbaiano non hanno un proprietario} è equivalente a \q{Tutti i cani che abbaiano non hanno un proprietario}. I questo caso inoltre, anche la quantificazione esistenziale è implicita, poiché introdotta dalla locuzione \q{un}, che comunica il riferimento a un individuo.
+
+In generale, le frasi con la struttura \q{Gli \(A\) hanno la proprietà \(P\)} configurano una situazione in cui l'insieme degli elementi con la proprietà \(A\) è un sottoinsieme dell'insieme degli elementi con la proprietà \(P\). Di conseguenza, la traduzione in logica del prim'ordine di una frase con questa struttura è sempre della forma \(\forall x, (A(x) \to P(x))\).
+Ovviamente non è detto che \(A\) e \(P\) debbano essere atomiche, ma possono essere anche formule più complesse come nell'esempio precedente, in cui \(A(x)\) è \(C(x)\land A(x)\) e \(P(x)\) è \(\not\exists y\st P(y,x)\).
+
+Consideriamo ora la frase 
+\begin{quote}
+  \q{C'è un cane che ha due proprietari}
+\end{quote}
+
+La locuzione \q{C'è} comunica la presenza di una quantificazione esistenziale. In questo caso per indicare che ci sono due individui distinti è necessario utilizzare la negazione del simbolo di identità, ottenendo la formula
+\[\exists x\st C(x) \land \exists y \exists z\st P(x,y) \land P(x,z) \land \not(y = z)\]
+
+Tecnicamente, la frase è ambigua e potrebbe essere interpretata anche con l'avere esattamente due proprietari, e quindi andrebbe specificata differentemente la formula.
+
+Inoltre, possiamo notare che in questo caso la presenza di una quantificazione esistenziale porta all'utilizzo di una congiunzione invece che di un implicazione. Questo è dato dal fatto che la quantificazione esistenziale sceglie un elemento del dominio, e quindi è necessario che tale elemento soddisfi tutte le proprietà richieste, mentre la quantificazione universale non sceglie un elemento specifico ma li seleziona tutti, e quindi è necessario filtrare via quelli di cui non mi interessa parlare con una implicazione.
+
+In particolare, considerando il predicato unario \(HP\) vero per un cane che ha padrone, una formula del tipo \(\forall x, (C(x) \land HP(x))\) è una proprietà fortissima, che è falsa in ogni dominio che non ha solo cani non randagi. D'altro canto \(\exists x\st C(x) \to HP(x)\) è una proprietà quasi nulla, poiché banalmente vera per ogni dominio che ha almeno un oggetto non cane.
+
+In generale quindi, nella formalizzazione del linguaggio naturale in logica del prim'ordine, i quantificatori universali tendono a essere associati a implicazioni, mentre i quantificatori esistenziali tendono a essere associati a congiunzioni. Ovviamente, non è detto che questa sia una regola fissa.
+
+Consideriamo ora la frase 
+\begin{quote}
+  \q{I cani che hanno un proprietario non abbaiano}.
+\end{quote}
+
+Questa frase è molto simile alla frase già vista \q{I cani che abbaiano non hanno un proprietario}, che abbiamo tradotto come
+\[\forall x, ((C(x) \land A(x)) \to \not\exists y\st P(y,x))\]
+
+Un modo naturale per tradurre la nuova frase potrebbe essere
+\[\forall x, ((C(x) \land \exists y\st( P(y,x) )) \to \not A(x))\]
+
+La cosa che le rende simile è che in linguaggio naturale risultano essere modi diversi per esprimere la stessa cosa, e quindi ci si aspetta che le loro traduzioni siano equivalenti. Un modo molto semplice per mostrare che sono equivalenti è sfruttare le proprietà della logica proposizionale che abbiamo visto in precedenza. Ignorando infatti la quantificazione e concentrandosi sulla mera struttura proposizionale, possiamo trasformare la seconda formula in
+\[(A \land B )\to C\]
+e di conseguenza la prima formula sarà equivalente a
+\[(A \land \neg C) \to \neg B\]
+
+Ma ora usando l'equivalenza \((P \to Q) \equiv (\neg P \lor Q)\) e De Morgan abbiamo
+\[(A \land B )\to C\equiv \neg (A \land B) \lor C\equiv \neg A \lor \neg B \lor C \equiv (\neg A \lor C) \lor \neg B \equiv \neg (\neg A \lor C) \to \neg B \]
+che è proprio la forma della prima formula.
+
+Tornando alla formalizzazione, nella frase vista in precedenza, \q{C'è un cane che ha due proprietari} abbiamo notato come il linguaggio naturale contenga ambiguità riguardo all'espressione di quantità. Precedentemente infatti, abbiamo interpretato tale frase come \q{C'è un cane che ha almeno due proprietari}, anche se non è la semantica usuale intesa nel parlato.
+
+Consideriamo infatti la frase \q{Ogni genitore ha due figli}. Ancor di più questa frase è naturalmente percepita come intendere \q{Ogni genitore ha esattamente due figli}. In questo caso per poter effettuare una traduzione ci sarà necessaria una nuova segnatura. Consideriamo quindi come predicati un predicato unario \(G\) vero per i genitori e un predicato binario \(F\) vero per la relazione tra un genitore e un figlio.
+
+In questo caso il modo più naturale per tradurre la frase è
+\[\forall x,( G(x) \to \exists y \st(\exists z\st (F(x,y) \land F(x,z) \land \neg(y = z) \land \forall w, (w = y \lor w = z \lor \neg F(x,w)))))\]
+
+Chiaramente una formulazione alternativa, ma equivalente, è
+\[\forall x,( G(x) \to \exists y \st(\exists z\st (F(x,y) \land F(x,z) \land \neg(y = z) \land \neg \exists w\st (F(x,w) \land \neg(w = y) \land \neg(w = z)))))\]
+
+Questo poiché vale l'equivalenza \(\forall w, P(w) \equiv \neg \exists w, \neg P(w)\).
+Un occhio di riguardo va dato all'uso esaustivo delle parentesi, che per quanto rendano tutto molto verboso rimuove ogni ambiguità sintattica, che può portare a errori di interpretazione. 
+
+Consideriamo ora una frase simile, \q{Ci sono precisamente tre numeri primi minori di 7}. In questo caso, come predicati useremo \(N\) vero per i numeri, \(P\) vero per i numeri primi e \(<\) e \(=\) con l'interpretazione usuale. Inoltre, sarà necessario un simbolo di costante \(7\) da interpretare come il numero \(7\). Considerando quindi la formula \(\phi_{PN}(x,y,z) \eqdef P(x) \land P(y) \land P(z) \land N(x) \land N(y) \land N(z) \) possiamo tradurre la frase con la formula
+\[\exists x :(\exists y : (\exists z :(\neg (x=y) \land \neg (x=z) \land \neg (y=z) \land \phi_{PN}(x,y,z) \land x<7 \land y<7 \land z<7)))\]
+
+Questa formula però non coglie il \q{precisamente} della frase, poiché è soddisfatta anche da un dominio in cui ci sono almeno tre numeri primi minori di \(7\). Alla catena di congiunzioni va quindi aggiunta la formula
+\[\forall k, ((N(k)\land P(k) \land k<7) \to (k=x\lor k=y \lor k=z))\]
+
+Questa frase ci mostra come generalizzare il concetto di \q{esattamente \(n\)} a qualsiasi \(n\). In particolare, per esprimere che ci sono esattamente \(n\) elementi che soddisfano una certa proprietà \(P\), è necessario introdurre \(n\) variabili distinte \(x_1, \dots, x_n\) e congiungere la formula che afferma che tutte queste variabili soddisfano \(P\) e sono distinte tra loro, con la formula che afferma che ogni elemento che soddisfa \(P\) è uguale a uno di questi \(n\) elementi.
+
+Consideriamo ora la frase \q{Ci sono infiniti numeri primi}. Normalmente, il concetto di infinitezza non è esprimibile in logica del prim'ordine, ma avendo a disposizione un predicato binario \(<\) con l'interpretazione usuale, è possibile esprimere questa frase con la formula
+\[\forall x,( (P(x) \land N(x)) \to \exists y, (P(y) \land N(y) \land x<y))\]
+Per poter esprimere questa infinitezza ci siamo dovuti affidare alla presenza di un predicato che fosse antiriflessivo, transitivo e totale, come abbiamo già visto in precedenza. Si può quindi assiomatizzare il comportamento di \(<\), e quindi esprimere l'infinità. In generale possiamo parlare di infinitezza solo su strutture ordinabili, ovvero per le quali esiste un predicato binario che soddisfa le proprietà di antiriflessività, transitività e totalità.
+
+Consideriamo ora la frase \q{Ci sono infiniti numeri primi}. Normalmente, il concetto di infinitezza non è esprimibile in logica del prim'ordine, ma avendo a disposizione un predicato binario \(<\) con l'interpretazione usuale, è possibile esprimere questa frase con la formula
+\[\forall x,( (P(x) \land N(x)) \to \exists y, (P(y) \land N(y) \land x<y))\]
+Per poter esprimere questa infinitezza ci siamo dovuti affidare alla presenza di un predicato che fosse antiriflessivo, transitivo e totale, come abbiamo già visto in precedenza. Si può quindi assiomatizzare il comportamento di \(<\), e quindi esprimere l'infinità. In generale possiamo parlare di infinitezza solo su strutture ordinabili, ovvero per le quali esiste un predicato binario che soddisfa le proprietà di antiriflessività, transitività e totalità. 
+
+Passiamo quindi alla frase \q{I numeri naturali divisori di un numero sono finiti}. Un modo alternativo di formulare lo stesso concetto è \q{Ogni numero naturale ha un numero finito di divisori}. Sempre nella stessa segnatura di prima, con l'aggiunta del predicato binario \(D\) per la divisibilità, questa frase può essere tradotta con la formula
+\[\forall x, (N(x) \to \exists y: (D(y,x) \land N(y) \land \forall z, ((D(z,x) \land N(z)) \to (z < y \lor z = y))))\]
+
+Vediamo infine qualche schema di traduzione generale per le locuzioni \q{almeno}, \q{al più} ed \q{esattamente}.
+
+Iniziamo con \q{Ci sono almeno \(n\) elementi}. Ovviamente \(n\) è un parametro della formula da cui dipenderà la lunghezza della formula. Sarà necessario solo \(=\) come predicato.
+\[\phi_{\geq n} \eqdef \exists x_1 \dots \exists x_n: (\bigwedge_{i=1}^n \bigwedge_{j=i+1}^n \neg (x_i = x_j))\]
+
+Per poter dire invece \q{Ci sono al più \(n\) elementi} usando solo \(=\) come predicato, possiamo sia negare una formula esistenziale, oppure usare la formula
+\[\phi_{\leq n} \eqdef \forall x_1 \dots \forall x_{n+1}: (\bigvee_{i=1}^{n+1} \bigvee_{j=i+1}^{n+1} (x_i = x_j))\equiv \neg \phi_{\geq n+1}\]
+
+Infine, per esprimere \q{Ci sono esattamente \(n\) elementi} è sufficiente congiungere le due formule precedenti, ottenendo
+\[\phi_{= n} \eqdef \phi_{\geq n} \land \phi_{\leq n}\]
+
+Questo però porta a una formula molto lunga. Lo stesso concetto può essere espresso in maniera più compatta come segue
+\[\phi_{= n} \eqdef \exists x_1 \dots \exists x_n ((\bigwedge_{i=1}^n \bigwedge_{j=i+1}^n \neg (x_i = x_j)) \land \forall x_{n+1}, \bigvee_{i=1}^{n} (x_{n+1} = x_i) )\]

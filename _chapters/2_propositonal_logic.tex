@@ -2,12 +2,12 @@
 
 Abbiamo visto, nel capitolo precedente, che una logica è caratterizzata da tre componenti fondamentali: un linguaggio formale, una semantica e un calcolo.
 In questo capitolo, studieremo in dettaglio la \textit{logica proposizionale}, la più semplice tra le logiche classiche, che costituisce il punto di partenza per comprendere sistemi logici più complessi.
-Procederemo sistematicamente, partendo dalla definizione del linguaggio (sintassi), per poi introdurre la semantica ed infine studiare i sistemi di calcolo per la derivazione di conseguenze logiche.
+Procederemo sistematicamente, partendo dalla definizione del linguaggio (sintassi), per poi introdurre la semantica e infine studiare i sistemi di calcolo per la derivazione di conseguenze logiche.
 
 \section{Sintassi della Logica Proposizionale}
 
 Il primo passo nella costruzione di una logica formale è definire il suo linguaggio, anche detto alfabeto. Il linguaggio è l'insieme dei simboli da cui attingere per la creazione di espressioni.
-In generale, un linguaggio logico è composto da due tipi di simboli: i \textit{simboli non logici}, su cui la logica non fa alcuna assunzione e il cui significato varia a seconda della \qi{situazione}, ed i \textit{simboli logici}, i cui significati sono fissati dalla specifica logica.
+In generale, un linguaggio logico è composto da due tipi di simboli: i \textit{simboli non logici}, su cui la logica non fa alcuna assunzione e il cui significato varia a seconda della \qi{situazione}, e i \textit{simboli logici}, i cui significati sono fissati dalla specifica logica.
 
 \begin{definition}{Alfabeto della logica proposizionale}
   L'alfabeto della logica proposizionale è costituito da:
@@ -81,7 +81,7 @@ L'induzione strutturale consente di dimostrare proprietà delle formule proceden
 
 A differenza dell'induzione matematica semplice sui numeri naturali, dove per dimostrare \(P(n)\) assumiamo solo \(P(n-1)\), l'induzione strutturale è basata sul principio di \textit{induzione completa} (o forte), secondo cui, per dimostrare una proprietà \(P(n)\) assumiamo che valga \(P(m), \forall m < n\). 
 Nel caso dell'induzione strutturale, per dimostrare una proprietà di \(\phi\), assumiamo che tale proprietà valga per ogni sottoformula propria di \(\phi\).
-L'induzione strutturale su una formula è equivalente all'induzione completa sull'altezza del relativo albero sintattico. Poiché l'altezza di un albero sintattico fornisce un ordine ben fondato\footnote{L'altezza di un albero indica il numero massimo di nodi lungo un percorso dalla radice ad una foglia. L'altezza è un intero non negativo: il minimo è \(0\), ovvero l'altezza di una foglia. Essendo l'insieme degli interi non negativi, assieme alla relazione d'ordine \(\leq\), ben fondato, anche l'insieme delle altezze, con la stessa relazione d'ordine, è ben fondato.}, anche l'induzione strutturale è ben fondata.
+L'induzione strutturale su una formula è equivalente all'induzione completa sull'altezza del relativo albero sintattico. Poiché l'altezza di un albero sintattico fornisce un ordine ben fondato\footnote{L'altezza di un albero indica il numero massimo di nodi lungo un percorso dalla radice a una foglia. L'altezza è un intero non negativo: il minimo è \(0\), ovvero l'altezza di una foglia. Essendo l'insieme degli interi non negativi, assieme alla relazione d'ordine \(\leq\), ben fondato, anche l'insieme delle altezze, con la stessa relazione d'ordine, è ben fondato.}, anche l'induzione strutturale è ben fondata.
 
 La definizione ricorsiva di formula ben formata impone che i sottoalberi di un albero sintattico siano a loro volta alberi sintattici.
 Tali sottoalberi rappresentano le \keyword{sottoformule} di una formula, il cui insieme è definito come segue.
@@ -100,7 +100,7 @@ Possiamo ora osservare una prima applicazione dell'induzione strutturale, dimost
 
 \begin{note}{}
   Tale proprietà evidenzia l'importanza delle regole di formazione delle WFF, differenziandole da generiche successioni di simboli.
-  Infatti, data una stringa qualsiasi, il numero di sottostringhe è quadratico rispetto alla lunghezza della stringa\footnote{Si prenda ad esempio la formula \qi{ABC}, che non è ben formata. In essa, troviamo una sola sottostringa di lunghezza \(3\) (\qi{ABC}), due sottostringhe di lunghezza \(2\) (\qi{AB},\qi{BC}), tre sottostringhe di lunghezza \(1\) (\qi{A},\qi{B},\qi{C}). Si vede quindi che, per una stringa qualsiasi di lunghezza \(n\), il numero di sue sottoformule è \(n(n-1)/2=\mathcal{O}(n^{2})\).}, mentre, presa una WFF, il numero di sottoformule è solamente lineare rispetto alla lunghezza della formula.
+  Infatti, data una stringa qualsiasi, il numero di sottostringhe è quadratico rispetto alla lunghezza della stringa\footnote{Si prenda ad esempio la formula \(ABC\), che non è ben formata. In essa, troviamo una sola sottostringa di lunghezza \(3\) (\(ABC\)), due sottostringhe di lunghezza \(2\) (\(AB,BC\)), tre sottostringhe di lunghezza \(1\) (\(A,B,C\)). Si vede quindi che, per una stringa qualsiasi di lunghezza \(n\), il numero di sue sottoformule è \(n(n-1)/2=\mathcal{O}(n^{2})\).}, mentre, presa una WFF, il numero di sottoformule è solamente lineare rispetto alla lunghezza della formula.
 \end{note}
 
 \begin{proposition}{}
@@ -122,7 +122,7 @@ Possiamo ora osservare una prima applicazione dell'induzione strutturale, dimost
           In questo caso non è detto valga l'uguaglianza, perché è possibile che \(\Sub{\phi'}\) e \(\Sub{\psi'}\) non siano disgiunti.
           Inoltre, \(\abs{\phi} = \abs{\phi'} + \abs{\psi'} + 1\) (perché aggiungiamo il connettivo). Quindi partendo da:
           \[\abs{\Sub{\phi'}} \leq \abs{\phi'}\]
-          sommiamo \(\abs{\Sub{\psi'}}\) ad ambo i membri dell'inequazione:
+          sommiamo \(\abs{\Sub{\psi'}}\) ad ambo i membri dell'disequazione:
           \[\abs{\Sub{\phi'}} +\abs{\Sub{\psi'}} \leq \abs{\phi'} + \abs{\Sub{\psi'}} \leq \abs{\phi'} + \abs{\psi'}\]
           e dunque
           \[\abs{\Sub{\phi}} \leq \abs{\Sub{\phi'}} + \abs{\Sub{\psi'}} + 1 \leq \abs{\phi'} + \abs{\psi'} + 1 = \abs{\phi}\]
@@ -163,14 +163,14 @@ Essendo \(\AP\) potenzialmente infinito, anche i modelli possono essere infiniti
 
 Tale definizione rappresenta una procedura ricorsiva per determinare se una formula è soddisfatta da un modello, partendo dalle proposizioni atomiche e risalendo l'albero sintattico della formula.
 
-Il problema decisionale di verificare se \(m \models \phi\) è detto \keyword{model checking}, e, a patto di risolvere il problema di rappresentazione di modelli potenzialmente infiniti, è facilmente decidibile\footnote{Un problema è decidibile quando per esso esiste un algoritmo, la cui terminazione è garantita, che lo risolve. In particolare, un problema è facilmente decidibile quando esiste un tale algoritmo che abbia complessità polinomiale.}, poiché equivale ad un'esplorazione in post-ordine dell'albero sintattico di \(\phi\), che ha un numero di nodi pari al numero di sottoformule di \(\phi\), che è al più pari alla lunghezza di \(\phi\).
+Il problema decisionale di verificare se \(m \models \phi\) è detto \keyword{model checking}, e, a patto di risolvere il problema di rappresentazione di modelli potenzialmente infiniti, è facilmente decidibile\footnote{Un problema è decidibile quando per esso esiste un algoritmo, la cui terminazione è garantita, che lo risolve. In particolare, un problema è facilmente decidibile quando esiste un tale algoritmo che abbia complessità polinomiale.}, poiché equivale a un'esplorazione in post-ordine dell'albero sintattico di \(\phi\), che ha un numero di nodi pari al numero di sottoformule di \(\phi\), che è al più pari alla lunghezza di \(\phi\).
 
 Avendo finalmente definito la semantica possiamo andare a formalizzare le definizioni informali date nel primo capitolo.
 \begin{definition}{Soddisfacibilità}
   Una formula \(\phi\) è \keyword{soddisfacibile} (\(\Sat[\phi]\)) se e soltanto se esiste un modello \(m\in 2^{\AP}\) tale che \(m \models \phi\).
 \end{definition}
 
-Il problema decisionale di verificare \(\Sat[\phi]\) è detto \keyword{soddisfacibilità} ed è un problema centrale in logica e informatica teorica, poiché molti problemi di interesse (pianificazione delle azioni, colorazione dei grafi etc.) possono essere ridotti ad esso. 
+Il problema decisionale di verificare \(\Sat[\phi]\) è detto \keyword{soddisfacibilità} ed è un problema centrale in logica e informatica teorica, poiché molti problemi di interesse, come pianificazione delle azioni, colorazione dei grafi, etc, possono essere ridotti a esso. 
 Ciò significa che, se riuscissimo a risolvere il problema di soddisfacibilità in modo efficiente, potremmo risolvere anche molti altri problemi in modo efficiente.
 Rispetto al model checking, il problema di soddisfacibilità è spesso più complesso, poiché richiede l'esplorazione dello spazio dei modelli, che cresce esponenzialmente con il numero di proposizioni atomiche coinvolte nella formula\footnote{Se una formula è composta da una sola proposizione elementare \(A\), allora sono necessari due modelli per esplorare tutte le situazioni possibili: uno in cui \(A\) è vera, uno in cui \(A\) è falsa. Se \(\phi\) è composta da due formule elementari \(A\) e \(B\), allora, per esplorare tutte le situazioni possibili, ovvero tutte le combinazioni di verità e falsità delle di \(A\) e \(B\), sono necessari quattro modelli. Se le formule sono tre, servono otto modelli e così via. In generale, per descrivere tutti casi possibili per una formula con \(n\) proposizioni elementari, sono necessari \(2^{n}\) modelli.}. 
 Più semplicemente, il problema di soddisfacibilità è più complesso perché costituito da tanti problemi di model checking per quanti sono i modelli possibili.
@@ -179,7 +179,7 @@ Più semplicemente, il problema di soddisfacibilità è più complesso perché c
   Una formula \(\phi\) è \keyword{valida} (\(\Valid[\phi]\)) se e soltanto se per ogni modello \(m\in 2^{\AP}\) vale \(m \models \phi\).
 \end{definition}
 
-La validità e la soddisfacibilità sono concetti duali, nel senso che \(\Sat[\phi]\iff \neg \Valid[\neg \phi]\) e \(\Valid[\phi] \iff \neg \Sat[\neg \phi]\).\footnote{I simboli \(\iff\) e \(\implies\) sono simboli di \textbf{meta-linguaggio}. Tali simboli non appartengono al linguaggio ogetto del discroso (in questo caso la logica proposizionale), ma sono simboli sono utilizzati (con l'interpretazione usuale) per parlare di proprietà del linguaggio stesso.}
+La validità e la soddisfacibilità sono concetti duali, nel senso che \(\Sat[\phi]\iff \neg \Valid[\neg \phi]\) e \(\Valid[\phi] \iff \neg \Sat[\neg \phi]\).\footnote{I simboli \(\iff\) e \(\implies\) sono simboli di \textbf{metalinguaggio}. Tali simboli non appartengono al linguaggio oggetto del discorso (in questo caso la logica proposizionale), ma sono simboli sono utilizzati (con l'interpretazione usuale) per parlare di proprietà del linguaggio stesso.}
 Questo è diretta conseguenza del fatto che, data una qualsiasi proprietà \(P\), \(\exists x:P(x) \iff \forall x, \neg P(\neg x)\). Ciò verrà dimostrato formalmente quando tratteremo la logica del primo ordine.
 
 \begin{definition}{Estensione della soddisfacibilità}
@@ -257,11 +257,11 @@ Tuttavia, per calcolare il valore di verità di una formula complessa, definiamo
   % \end{enumerate}
 \end{definition}
 
-A questo punto, verificare se una certa formula assume valore \(0\) o \(1\) rispetto ad un assegnamento compatibile diventa un problema facilmente decidibile. 
+A questo punto, verificare se una certa formula assume valore \(0\) o \(1\) rispetto a un assegnamento compatibile diventa un problema facilmente decidibile. 
 Infatti, la valutazione di una formula \(\phi\) ha complessità \(\BigTheta{\abs{\AP[\phi]}}\), quindi \(\BigTheta{\abs{\phi}}\).
 
 Per poter dire di aver risolto definitivamente il problema dell'infinità dei modelli, bisogna dimostrare che questa nuova semantica, basata sugli assegnamenti, sia equivalente a quella basata su modelli. 
-In altre parole, dobbiamo mostrare che ad ogni modello corrisponde un assegnamento equivalente, e viceversa, e che la relazione di soddisfacimento \(m \models \phi\) è equivalente alla valutazione \(\Val{\alpha}[\phi] = 1\).
+In altre parole, dobbiamo mostrare che a ogni modello corrisponde un assegnamento equivalente, e viceversa, e che la relazione di soddisfacimento \(m \models \phi\) è equivalente alla valutazione \(\Val{\alpha}[\phi] = 1\).
 Per fare ciò, andremo a mostrare che una formula è tautologica se e solo se è valida. 
 Facendo ciò, otterremo anche un modo per correlare \(m \models \phi\) e \(\Val{\alpha}[\phi] = 1\).
 Prima, però, definiamo il concetto di \keyword{tautologia}.
@@ -323,7 +323,7 @@ Procediamo adesso, per contrapposizione, alla dimostrazione del teorema. Quindi,
 \begin{proof}[Dimostrazione (\ref{thm:validity-equals-taut})]
   \begin{description}
     \item[\qi{\(\implies\)}]
-      Sia \(m\) t.c. \(m \models \neg \phi\).
+      Sia \(m\) tale che \(m \models \neg \phi\).
       Costruendo \(\alpha_{m}\) secondo il lemma, si ha:
       \[m\models \neg \phi \iff \Val{\alpha_{m}}[\neg\phi]=1 \iff \Val{\alpha_{m}}[\phi]=0\]
       Allora, abbiamo trovato un assegnamento \(\alpha_{m}\) tale per cui la valutazione di \(\phi\) è \(0\). Quindi, \(\neg\Taut[\phi]\).
@@ -353,7 +353,7 @@ Il costo computazionale di \(\Valid\) è però esponenziale, in quanto \(\abs{\A
   \end{enumerate}
 \end{example}
 
-\section{Sostituzioni}
+\section{Sostituzioni nella Logica Proposizionale}
 
 Per avvicinarci gradualmente verso la formalizzazione del concetto di \q{ragionamento}, o deduzione, anticipato all'inizio del corso, introduciamo una prima forma di manipolazione delle formule: la sostituzione, che permette di costruire nuove formule a partire da formule già esistenti, preservando alcune proprietà semantiche.
 
@@ -388,7 +388,7 @@ La sostituzione permette di sostituire ogni proposizione atomica con una formula
   Nel secondo caso infatti si è applicata la sostituzione per \(B\) anche all'interno della formula sostituita a \(A\). Tale comportamento è quello che si sarebbe ottenuto considerando un ulteriore sostituzione \(\tau = \set{B\leftarrow \neg A}\) e applicando \((\phi\sigma)\tau\).
 \end{example}
 
-Per mostrare come la sostituzione sia una prima forma di deduzione logica molto elementare, e che quindi preservi alcune proprietà semantiche, andiamo ad enunciare e successivamente dimostrare il \Namedonly{thm:substitution}.
+Per mostrare come la sostituzione sia una prima forma di deduzione logica molto elementare, e che quindi preservi alcune proprietà semantiche, andiamo a enunciare e successivamente dimostrare il \Namedonly{thm:substitution}.
 
 \begin{theorem}[namedlabel={thm:substitution}{Teorema di Sostituzione}]{Teorema di Sostituzione}
   Sia \(\phi\in \Taut\) e \(\sigma\) un'arbitraria sostituzione. Allora \(\phi\sigma\in \Taut\).
@@ -449,7 +449,7 @@ Procederemo per contrapposizione, ovvero assumeremo che \(\phi\sigma \not\in \Ta
   Questo è facile da vedere considerando \(\phi = P \in \AP\). Si osserva \(\phi \in \Sat\) per qualsiasi assegnamento \(\alpha\) tale per cui \(\alpha(P)=1\).
   Scegliendo però \(\sigma : P \to P\land \neg P\), che è chiaramente insoddisfacibile, e fissato un modello \(m\), si ha che
   \[m\models\phi \centernot\implies m\models\phi\sigma\]
-  Altrimenti, si otterebbe una contraddizione.
+  Altrimenti, si otterrebbe una contraddizione.
 
   Invece, la sostituzione conserva l'insoddisfacibilità. Infatti,
   \[\phi \in \Unsat \iff \neg \phi \in \Taut \implies (\neg\phi)\in \Taut\iff \]
@@ -457,14 +457,14 @@ Procederemo per contrapposizione, ovvero assumeremo che \(\phi\sigma \not\in \Ta
 \end{observation}
 
 Il teorema di sostituzione è un primo esempio di come sia possibile manipolare le formule in modo da preservare alcune proprietà semantiche. 
-In particolare, tale teorema ci dice che è possibile creare infinite formule valide, poiché è sufficiente partire da una formula valida, applicare una qualsiasi sostituzione ed ottenere una nuova formula valida.
+In particolare, tale teorema ci dice che è possibile creare infinite formule valide, poiché è sufficiente partire da una formula valida, applicare una qualsiasi sostituzione e ottenere una nuova formula valida.
 
 \subsection{Deduzione Semantica}
 
 Possiamo notare che \(A \to (B\to C)\equiv (A\land B)\to C\).
 Infatti, chiamando \(\phi_1 = A \to (B\to C)\) e la seconda \(\phi_2 = (A\land B)\to C\) possiamo andare ad analizzare quali assegnamenti rendono vere o false ciascuna di queste formule.
 
-La prima formula \(\phi_1\) ha come connetivo principale l'implicazione, e dunque è falsa se e soltanto se \(A\) è vera e \(B\to C\) è falsa. Ma \(B\to C\) è un altra implicazione, dunque è falsa se e soltanto se \(B\) è vera e \(C\) è falsa. Di conseguenza, \(\phi_1\) è falsa se e soltanto se \(A\) è vera, \(B\) è vera e \(C\) è falsa.
+La prima formula \(\phi_1\) ha come connettivo principale l'implicazione, e dunque è falsa se e soltanto se \(A\) è vera e \(B\to C\) è falsa. Ma \(B\to C\) è un altra implicazione, dunque è falsa se e soltanto se \(B\) è vera e \(C\) è falsa. Di conseguenza, \(\phi_1\) è falsa se e soltanto se \(A\) è vera, \(B\) è vera e \(C\) è falsa.
 
 D'altro canto, anche la seconda formula \(\phi_2\) ha come connettivo principale l'implicazione, e dunque è falsa se e soltanto se \(A\land B\) è vera e \(C\) è falsa. Ma \(A\land B\) è vera se e soltanto se \(A\) è vera e \(B\) è vera. Di conseguenza, \(\phi_2\) è falsa se e soltanto se \(A\) è vera, \(B\) è vera e \(C\) è falsa, ovvero le due formule sono false, e quindi vere, negli stessi assegnamenti, e dunque sono logicamente equivalenti.
 
@@ -480,7 +480,7 @@ Questa tautologia è alla base del concetto di deduzione semantica, ovvero la po
 
 Il teorema permette di \qi{estrarre} una premessa, spostandola nella conseguenza logica da dimostrare.
 Ciò consente spesso di semplificare le dimostrazioni. 
-Infatti, per dimostrare \(\Gamma,\phi \models \psi\), è necessario, in primis, trovare un modello per cui valga \(\Gamma, \phi\).
+Infatti, per dimostrare \(\Gamma,\phi \models \psi\), è necessario, in primo luogo, trovare un modello per cui valga \(\Gamma, \phi\).
 Abbiamo visto che la ricerca di un modello ha complessità esponenziale rispetto al numero di proposizioni elementari coinvolte. A ciò, si aggiungono eventuali dipendenze tra queste. 
 Pertanto, cercare un modello che soddisfi \(\Gamma\) è sicuramente più facile che cercare un modello che soddisfi \(\Gamma, \phi\).
 Inoltre, la deduzione logica permette di soddisfare le proposizioni in maniera sequenziale.
@@ -506,13 +506,13 @@ Ad esempio, invece di dire \qi{Se piove e fa freddo, allora prendo l'ombrello e 
 
 \section{Forme normali}
 
-Il linguaggio che abbiamo utilizzato fino ad adesso contiene molti simboli, ma come abbiamo già osservato tramite alcune tatutologie è possibile esprimere alcuni operatori in funzione di altri.
+Il linguaggio che abbiamo utilizzato fino ad adesso contiene molti simboli, ma come abbiamo già osservato tramite alcune tautologie è possibile esprimere alcuni operatori in funzione di altri.
 
 Un esempio potrebbero essere le leggi di De Morgan
 \[\neg(\phi\land\psi) \equiv \neg\phi \lor \neg\psi\]
 \[\neg(\phi\lor\psi) \equiv \neg\phi \land \neg\psi\]
 
-Interpretando queste equivalenze come regole di trasformazione, questo ci permette di spingere le negazioni fino alle proposizioni atomiche mantenedo l'equivalenza logica.
+Interpretando queste equivalenze come regole di trasformazione, questo ci permette di spingere le negazioni fino alle proposizioni atomiche mantenendo l'equivalenza logica.
 
 In questo modo, possiamo definire una prima forma normale, chiamata \(\PNF\) (Positive Normal Form) o \(\NNF\) (Negation Normal Form), che contiene tutte le formule di \(\PL\) in cui le negazioni occorrono solo davanti a proposizioni atomiche.
 
@@ -591,9 +591,9 @@ Il seguente esempio chiarirà sicuramente il procedimento descritto.
 \end{example}
 
 \begin{note}{}
-  Il procedimento mostrato non permette di costruire formule non soddisfacibili. Se non riuscissimo ad esprimere le formule insoddisfacibili in \(\DNF\), allora la \(\DNF\) non manterrebbe, come abbiamo detto, la completezza semantica.
-  Per risolvere il \qi{buco} lasciato dal procedimento descritto, è sufficiente associare, ad ogni formula insoddisfacibile, la formula \(P\land \neg P\), che è \(\DNF\).
-  Ciò è possibile dal momento in cui tutte le formula insoddisfacibili sono equivalenti ad una contraddizione.
+  Il procedimento mostrato non permette di costruire formule non soddisfacibili. Se non riuscissimo a esprimere le formule insoddisfacibili in \(\DNF\), allora la \(\DNF\) non manterrebbe, come abbiamo detto, la completezza semantica.
+  Per risolvere il \qi{buco} lasciato dal procedimento descritto, è sufficiente associare, a ogni formula insoddisfacibile, la formula \(P\land \neg P\), che è \(\DNF\).
+  Ciò è possibile dal momento in cui tutte le formula insoddisfacibili sono equivalenti a una contraddizione.
 \end{note}
 
 Per le \(\CNF\) il ragionamento è simile. 
@@ -604,7 +604,7 @@ In questo modo, ci troviamo con una formula della forma:
 A questo punto, applicando le leggi di De Morgan, possiamo ottenere una formula della forma:
 \[\phi'' = (\neg l_1^1 \lor \ldots \lor \neg l_1^{r_1})\land(\neg l_2^1 \lor \ldots \lor \neg l_2^{r_2})\land\ldots\land (\neg l_k^1 \lor \ldots \lor \neg l_k^{r_k})\]
 che è esattamente una formula in \(\CNF\).
-Si noti che, se, prima dell'applicazione della legge di De Morgan, un letterale era della forma \(\neg l\), allora l'applicazione di De Morgan porta il letterale ad essere \(\neg \neg l\), che, per doppia negazione, equivale a \(l\).
+Si noti che, se, prima dell'applicazione della legge di De Morgan, un letterale era della forma \(\neg l\), allora l'applicazione di De Morgan porta il letterale a essere \(\neg \neg l\), che, per doppia negazione, equivale a \(l\).
 
 \begin{example}{}
   Riprendendo la tabella di verità dell'esempio precedente, possiamo costruire la formula in \(\CNF\) equivalente a \(\phi\) come segue:
@@ -614,12 +614,12 @@ Si noti che, se, prima dell'applicazione della legge di De Morgan, un letterale 
 
 \begin{note}{}
   In modo duale alle \(\DNF\), il procedimento descritto non consente di costruire una formula \(\CNF\) equivalente a formule valide.
-  Poiché tutte le formule valide sono equivalenti ad una tautologia, è possibile associare ad esse la formula \(P \lor \neg P\), che è \(\CNF\).
+  Poiché tutte le formule valide sono equivalenti a una tautologia, è possibile associare a esse la formula \(P \lor \neg P\), che è \(\CNF\).
 \end{note}
 
 Tuttavia, queste costruzioni sono estremamente inefficienti e portano a formule di dimensione esponenziale rispetto alla formula di partenza. 
 Ciò avviene perché la dimensione della tabella di verità di una formula \(\phi\) è \(2^{\abs{\AP[\phi]}}\), dovendo considerare tutti gli assegnamenti possibili, e dunque la formula in \(\DNF\) o \(\CNF\) costruita a partire da tale tabella può avere un numero di clausole esponenziale. 
-In particolare, se \(\phi\) è già in \(\DNF\) o in \(\CNF\), allora passare alla forma normale duale usando le leggi di De Morgan e la distribuitività porta a una formula di dimensione esponenziale.
+In particolare, se \(\phi\) è già in \(\DNF\) o in \(\CNF\), allora passare alla forma normale duale usando le leggi di De Morgan e la distributività porta a una formula di dimensione esponenziale.
 
 \begin{example}{}
   Sia \(\phi \in\DNF\) tale che \(\phi\) sia:
