@@ -30,9 +30,29 @@
     },
     {
       "login": "riccardoregina",
-      "name": "riccardoregina",
+      "name": "Riccardo Regina",
       "avatar_url": "https://avatars.githubusercontent.com/u/126416822?v=4",
       "profile": "https://github.com/riccardoregina",
+      "contributions": [
+        "doc",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "FredFox3",
+      "name": "Alfredo Volpe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121014529?v=4",
+      "profile": "https://github.com/FredFox3",
+      "contributions": [
+        "doc",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "gyus-e",
+      "name": "Giuseppe Amato",
+      "avatar_url": "https://avatars.githubusercontent.com/u/93407469?v=4",
+      "profile": "https://github.com/gyus-e",
       "contributions": [
         "doc",
         "maintenance"
@@ -43,16 +63,6 @@
       "name": "Angelo Paolella",
       "avatar_url": "https://avatars.githubusercontent.com/u/54139598?v=4",
       "profile": "https://github.com/AngPao29",
-      "contributions": [
-        "doc",
-        "maintenance"
-      ]
-    },
-    {
-      "login": "gyus-e",
-      "name": "Gyus",
-      "avatar_url": "https://avatars.githubusercontent.com/u/93407469?v=4",
-      "profile": "https://github.com/gyus-e",
       "contributions": [
         "doc",
         "maintenance"
