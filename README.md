@@ -20,7 +20,7 @@ Il corso fornisce una introduzione rigorosa alla logica formale e alle sue appli
 
 ## Contributors
 
-<div style="width: 70%; margin-right: auto; margin-left: auto;"> 
+<div style="width: 70%; margin-right: auto; margin-left: auto;">
 <div align="center">
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -28,10 +28,11 @@ Il corso fornisce una introduzione rigorosa alla logica formale e alle sue appli
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FredFox3"><img src="https://avatars.githubusercontent.com/u/121014529?v=4?s=100" width="100px;" alt="Alfredo Volpe"/><br /><sub><b>Alfredo Volpe</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=FredFox3" title="Documentation">📖</a> <a href="#maintenance-FredFox3" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AngPao29"><img src="https://avatars.githubusercontent.com/u/54139598?v=4?s=100" width="100px;" alt="Angelo Paolella"/><br /><sub><b>Angelo Paolella</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=AngPao29" title="Documentation">📖</a> <a href="#maintenance-AngPao29" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gyus-e"><img src="https://avatars.githubusercontent.com/u/93407469?v=4?s=100" width="100px;" alt="Gyus"/><br /><sub><b>Gyus</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=gyus-e" title="Documentation">📖</a> <a href="#maintenance-gyus-e" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gyus-e"><img src="https://avatars.githubusercontent.com/u/93407469?v=4?s=100" width="100px;" alt="Giuseppe Amato"/><br /><sub><b>Giuseppe Amato</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=gyus-e" title="Documentation">📖</a> <a href="#maintenance-gyus-e" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RiccardoElena"><img src="https://avatars.githubusercontent.com/u/23059036?v=4?s=100" width="100px;" alt="Riccardo Elena"/><br /><sub><b>Riccardo Elena</b></sub></a><br /><a href="#content-RiccardoElena" title="Content">🖋</a> <a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=RiccardoElena" title="Documentation">📖</a> <a href="#maintenance-RiccardoElena" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/riccardoregina"><img src="https://avatars.githubusercontent.com/u/126416822?v=4?s=100" width="100px;" alt="riccardoregina"/><br /><sub><b>riccardoregina</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=riccardoregina" title="Documentation">📖</a> <a href="#maintenance-riccardoregina" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/riccardoregina"><img src="https://avatars.githubusercontent.com/u/126416822?v=4?s=100" width="100px;" alt="Riccardo Regina"/><br /><sub><b>Riccardo Regina</b></sub></a><br /><a href="https://github.com/RiccardoElena/LOGIC_Notes/commits?author=riccardoregina" title="Documentation">📖</a> <a href="#maintenance-riccardoregina" title="Maintenance">🚧</a></td>
     </tr>
   </tbody>
 </table>
