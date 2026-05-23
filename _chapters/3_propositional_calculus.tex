@@ -921,7 +921,7 @@ Tale teorema è di particolare importanza, poiché ci garantisce che nella verif
   Abbiamo che 
   \[\Gamma \models \phi \iff \Gamma \vdash \phi\]
   Ciò è equivalente all'esistenza di una deduzione \(\pi\) di \(\phi\) da \(\Gamma\).
-  Sia allora \(\Gamma_0 = leaf(\pi)\cap \Gamma\). Ovviamente \(\Gamma_0\subseteq\Gamma\), \(\Gamma_0\subseteq\Gamma\) e \(\abs{\Gamma_0}<\infty\).
+  Sia allora \(\Gamma_0 = leaf(\pi)\cap \Gamma\). Ovviamente \(\Gamma_0\subseteq\Gamma\) e \(\abs{\Gamma_0}<\infty\).
   Inoltre, per costruzione di \(\Gamma_0\), \(\Gamma_0\vdash\phi\), e quindi \(\Gamma_0\models\phi\) per correttezza.
   Sia allora \(\Gamma' = \set{\psi \in \pi}[\psi \text{ foglia non scaricata di }\pi]\).
   Ma essendo \(\pi\) finito, \(\Gamma'\) è finito, e banalmente \(\Gamma' \subseteq \Gamma\) per definizione di deduzione.
@@ -942,7 +942,7 @@ Arriviamo infine a un teorema che generalizza il \Namedcref{thm:substitution}, c
   Abbiamo già visto nel teorema di sostituzione che \(\models\phi \implies \models\phi\sigma\) per ogni \(\sigma\).
 
   Possiamo usare in questo caso il teorema di compattezza. Infatti da \(\Gamma\models\phi\) segue che esiste un sottoinsieme finito \(\Gamma_0 \subseteq \Gamma\) tale che \(\Gamma_0\models\phi\).
-  Essendo \(\Gamma_0\) finito sappiamo che \(\Gamma\models\phi\iff\models(\bigwedge\Gamma_0)\to\phi\), e quindi \(\models((\bigwedge_{\phi\in\Gamma_0}\phi)\to\phi)\sigma\) per il teorema di sostituzione.
+  Essendo \(\Gamma_0\) finito sappiamo che \(\Gamma_0\models\phi\iff\models(\bigwedge\Gamma_0)\to\phi\), e quindi \(\models((\bigwedge_{\phi\in\Gamma_0}\phi)\to\phi)\sigma\) per il teorema di sostituzione.
 
   Per la definizione di applicazione di una sostituzione \(\sigma\) si ha che \(((\bigwedge\Gamma_0)\to\phi)\sigma\) è equivalente a \((\bigwedge_{\phi\in\Gamma_0}\phi\sigma)\to\phi\sigma\).
   Quindi \(\Gamma_0\sigma\models\phi\sigma\) per il teorema di deduzione semantica e quindi \(\Gamma\sigma\models\phi\sigma\) per monotònicità.
