@@ -1046,6 +1046,8 @@ In particolare, per la deduzione naturale, la differenza principale sarà nel po
 
 Tratteremo più nel dettaglio successivamente il concetto di teoria, ma possiamo iniziare subito con un esempio di teoria semplice, ovvero la teoria dell'uguaglianza.
 
+\subsubsection{Regole di deduzione per \(=\) tramite assiomatizzazione}
+
 In particolare, l'insieme degli assiomi necessari per la teoria dell'uguaglianza è il seguente:
 
 \begin{enumerate}
@@ -1063,7 +1065,6 @@ In particolare ci si aspetterebbe che valgano simmetria, transitività e che l'u
 Per dimostrare la simmetria vorremmo mostrare che vale \(\vdash \forall x, \forall y, x=y \to y=x\). È importante notare che, avendo assiomatizzato l'uguaglianza, si ha che \(=\in\PredSyms\) e di conseguenza il terzo schema di assiomi è applicabile anche a \(P\eqdef =\) e quindi in particolare \(P(x_1,x_2)\eqdef x_1=x_2\).
 
 Allora dal terzo assioma istanziato con \(x_1\eqdef x\), \(y_1\eqdef y\), \(x_2 \eqdef x\) \(y_2 \eqdef x\) abbiamo:
-\todo{Fai controllare al prof}
 \begin{prooftree}
   \tiny
   \AxiomC{\(\forall x_1, x_2, y_1, y_2, (x_1 = y_1 \land x_2 = y_2) \to (P(x_1, x_2) \to P(y_1, y_2))\)}
@@ -1159,6 +1160,8 @@ Ancora una volta mostreremo il caso più semplice, ovvero con \(n=1\), che risul
   \RuleLabel{\(\forall I\)}
   \UnaryInfC{\(\forall x, \forall y, x=y \to (P(x) \to P(y))\)}
 \end{prooftree}
+
+\subsubsection{Regole di deduzione per \(=\) come simbolo logico}
 
 Passando quindi all'utilizzo di \(=\) come simbolo logico, è chiaro per la natura del calcolo di deduzione naturale vorremmo avere una regola di deduzione per ogni assioma descritto precedentemente, dovendo le regole catturare la semantica dei simboli a cui si applicano. Di conseguenza, con \(t_i, s_i \in \Terms\) le regole di inferenza per \(=\) sono le seguenti:
 
@@ -1359,7 +1362,43 @@ Inoltre, le regole di sostituzione \(Sub_f\) e \(Sub_P\) possono essere generali
   \todo{Ma riguardo i quantificatori? Non bisogna stare attenti ai vincoli?}
 \end{proof}
 
-Infine, andiamo come anticipato a mostrare come i vincoli di applicabilità per le regole dei quantificatori oltre a essere necessari sono sufficienti. Come già accennato precedentemente, sarà sufficiente mostrare la correttezza del calcolo di deduzione naturale ovvero, come fatto nella logica proposizionale, mostrare che dati \(\phi \in \FOL\) e \(\Gamma \subseteq \FOL\) si ha \(\Gamma \vdash \phi \implies \Gamma \models \phi\).
+\subsection{Proprietà del calcolo di deduzione naturale per il prim'ordine}
+
+Definite propriamente le regole di deduzione per la logica del prim'ordine, è possibile andare a dimostrare alcune proprietà interessanti riguardo al calcolo di deduzione naturale, in particolare riguardo alla correttezza e alla completezza del calcolo, molte delle quali saranno un analogo o una generalizzazione di quelle viste per la deduzione naturale nella logica proposizionale.
+
+Iniziamo dal teorema di correttezza che, come per la logica proposizionale, ci dice che tutte le formule dimostrabili tramite il calcolo di deduzione naturale sono anche semanticamente conseguenze logiche delle assunzioni, ovvero che se, presi \(\Gamma\subseteq \FOL\) e \(\phi \in \FOL\) si ha che \(\Gamma \vdash \phi \implies \Gamma \models \phi\).
+
+Tale dimostrazione giustificherà anche il perché i vincoli di applicabilità per le regole dei quantificatori oltre a essere necessari sono sufficienti. Questo perché vedremo che sarà per l'appunto sufficiente assumere tali vincoli nell'applicazione delle regole per mostrare che le regole preservano la conseguenza logica.
+
+Per facilitare la dimostrazione della correttezza del calcolo, andiamo a dimostrare prima un lemma intermedio sulle sostituzioni per variabili non presenti, che ci sarà utile per dimostrare la correttezza delle regole di \(\forall I\) e \(\exists E\).
+
+\begin{lemma}[namedlabel={lem:subs_in_non_present_vars}{Sostituzione di variabili non presenti}]{Sostituzione di variabili non presenti}
+  Sia \(\phi \in \FOL\) con \(y \notin \Var(\phi)\). Allora per ogni coppia \(M,\sigma\) e per ogni \(d \in D\) si ha che
+  \[M,\sigma[y\mapsfrom d] \models \subs{\phi}{x}{y} \iff M,\sigma[x\mapsfrom d] \models\phi\]
+\end{lemma}
+
+Da un punto di vista intuitivo, questo lemma ci sta dicendo cambiare il nome di una variabile in tutte le occorrenze con un altra variabile che non compare nella formula non cambia il significato della formula stessa, e quindi la soddisfacibilità della formula è invariata. Passiamo alla dimostrazione per andare più nel dettaglio.
+
+\begin{proof}
+  È possibile dividere la dimostrazione in due casi, a seconda se \(x\) è una variabile libera in \(\phi\) o meno.
+  Se \(x \notin FV(\phi)\) allora
+  \[M,\sigma[x\mapsfrom d] \models \phi \iff M,\sigma\models \phi \iff M,\sigma[y\mapsfrom d]\models \phi \iff M,\sigma[y\mapsfrom d] \models \subs{\phi}{x}{y}\]
+  grazie alla \Namedcref{prop:satisfaction_independence}. Infatti essendo sia \(x\) che \(y\) non in \(FV(\phi)\) ogni assegnamento che differisce solo per \(x\) e \(y\) è equivalente per \(\phi\).
+
+  Se \(x \in FV(\phi)\) allora per il teorema di sostituzione abbiamo
+  \[M,\sigma[y\mapsfrom d] \models \subs{\phi}{x}{y} \iff M,\sigma[y\mapsfrom d][x\mapsfrom \den{y}[M][\sigma[y\mapsfrom d]]] \models \phi\]
+  Essendo che \(y\notin \Var(\phi)\implies y\) libero per \(x\) in \(\phi\).
+
+  Chiaramente si ha che \(\den{y}[M][\sigma[y\mapsfrom d]] = d\), dunque
+  \[M,\sigma[y\mapsfrom d][x\mapsfrom \den{y}[M][\sigma[y\mapsfrom d]]] \models \phi \iff M,\sigma[y\mapsfrom d][x\mapsfrom d] \models \phi\]
+
+  Essendo che \(y\notin \Var(\phi)\) il suo valore nell'assegnamento non è rilevante, sempre per la \Namedcref{prop:satisfaction_independence}, dunque
+  \[M,\sigma[y\mapsfrom d][x\mapsfrom d] \models \phi \iff M,\sigma[x\mapsfrom d] \models \phi\]
+
+  Essendo che tutte le relazioni sono equivalenze, è mostrata la tesi.
+\end{proof}
+
+A questo punto possiamo passare alla dimostrazione del teorema di correttezza vero e proprio.
 
 \begin{theorem}{Correttezza del calcolo di deduzione naturale nel prim'ordine}
   Dati \(\phi \in \FOL\) e \(\Gamma \subseteq \FOL\) si ha che
@@ -1371,11 +1410,23 @@ Infine, andiamo come anticipato a mostrare come i vincoli di applicabilità per 
 
   Per alberi di altezza \(0\) si ha chiaramente che l'unico nodo è sia foglia che radice, ovvero è etichettato da \(\phi\) e appartiene a \(\Gamma\). Chiaramente se \(\phi \in \Gamma\) si ha che \(\Gamma \models \phi\) per definizione di soddisfacibilità.
 
-  Passando al caso induttivo, supponiamo di avere una deduzione con \(\phi\) in radice, foglie non scaricate tutte presenti in \(\Gamma\). Chiaramente, ogni sottalbero della radice è una deduzione di altezza minore per un certo \(\psi\) con assunzioni non scaricate in \(\Gamma\) per cui vale l'ipotesi induttiva che \(\Gamma \models \psi\) per ogni sottoalbero.
+  Passando al caso induttivo, supponiamo di avere una deduzione con \(\phi\) in radice, foglie non scaricate tutte presenti in \(\Gamma\). Chiaramente, ogni sottalbero della radice è una deduzione di altezza minore per dei vari \(\psi_1,\ldots,\psi_n\), con assunzioni non scaricate in \(\Gamma\) per cui vale l'ipotesi induttiva che \(\Gamma \models \psi_i\) per ogni sottoalbero. Di conseguenza, si avrà una struttura di prova del tipo
+
+  \begin{prooftree}
+    \AxiomC{\(\Gamma\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\psi_1\)}
+    \AxiomC{\(\vdots\)}
+    \AxiomC{\(\Gamma\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\psi_1\)}
+    \RuleLabel{\(\Rule \in \Rules\)}
+    \TrinaryInfC{\(\phi\)}
+  \end{prooftree}
 
   Per dimostrare la tesi sarà necessario quindi analizzare tutte le regole che possono aver prodotto \(\phi\) a partire dalle \(\psi\) dei sottoalberi, e mostrare che l'applicazione di tale regole mantiene correttezza semantica. Ovviamente, per le regole comuni alla logica proposizionale non c'è alcuna differenza con la dimostrazione già vista.
 
-  Iniziamo con \(\forall E\). In tal caso, l'albero di deduzione avrà la forma
+  Iniziamo con \(\Rule=\forall E\). In tal caso, l'albero di deduzione avrà la forma
 
   \begin{prooftree}
     \AxiomC{\(\Gamma\)}
@@ -1391,4 +1442,75 @@ Infine, andiamo come anticipato a mostrare come i vincoli di applicabilità per 
   Ovviamente \(\den{t}[M][\sigma] \in D\) e quindi, per \(d = \den{t}[M][\sigma]\), si ha che \(M,\sigma \models \Gamma \implies M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \psi\). Ora, dal \Namedcref{thm:fol_substitution}, si ha che \(M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \psi \iff M,\sigma\models \subs{\psi}{x}{t}\) se \(t\) è libero per \(x\) in \(\psi\). Essendo ciò vero per ipotesi, abbiamo che per ogni \(M,\sigma\):
   \[M,\sigma\models \Gamma \implies M,\sigma\models \subs{\psi}{x}{t}\]
   e quindi \(\Gamma \models \subs{\psi}{x}{t} \eqdef \phi\).
+
+  Passiamo ora a \(\Rule=\exists I\). Questo caso sarà molto simile a quello appena visto, essendo i vincoli di applicabilità i medesimi. La forma dell'albero di deduzione sarà la seguente:
+
+  \begin{prooftree}
+    \AxiomC{\(\Gamma\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\subs{\psi}{x}{t}\)}
+    \RuleLabel{\(\exists I\)}
+    \UnaryInfC{\(\exists x, \psi\)}
+  \end{prooftree}
+  in cui per ipotesi di applicabilità di \(\exists I\) si ha che \(t\) è libero per \(x\) in \(\psi\).
+  
+  Da ipotesi induttiva si ha che \(\Gamma \models \subs{\psi}{x}{t}\), e quindi per ogni \(M,\sigma\) si ha che \(M,\sigma\models \Gamma \implies M,\sigma\models \subs{\psi}{x}{t}\). Ora, dal \Namedcref{thm:fol_substitution}, si ha che \(M,\sigma\models \subs{\psi}{x}{t} \iff M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \psi\) se \(t\) è libero per \(x\) in \(\psi\). Essendo ciò vero per ipotesi, abbiamo che per ogni \(M,\sigma\):
+  \[M,\sigma\models \Gamma \implies M,\sigma[x\mapsfrom \den{t}[M][\sigma]]\models \psi\]
+  
+  Essendo chiaramente \(\den{t}[M][\sigma] \in D\), si ha che per ogni \(M,\sigma\) esiste \(d \in D\) tale che \(M,\sigma\models \Gamma \implies M,\sigma[x\mapsfrom d]\models \psi\). Di conseguenza, per definizione di soddisfacibilità di formule esistenziali, si ha che \(M,\sigma\models \Gamma \implies M,\sigma\models \exists x, \psi\), e quindi \(\Gamma \models \exists x, \psi\).
+
+  Passiamo dunque alle regole più complesse, ovvero \(\forall I\) e \(\exists E\). Iniziamo con \(\Rule = \forall I\). In tal caso, l'albero di deduzione avrà la forma:
+  \begin{prooftree}
+    \AxiomC{\(\Gamma\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\subs{\psi}{x}{y}\)}
+    \RuleLabel{\(\forall I\)}
+    \UnaryInfC{\(\forall x, \psi\)}
+  \end{prooftree}
+  in cui per ipotesi di applicabilità di \(\forall I\) si ha che \(y\) non compare in \(\phi\) e che non compare libero in nessuna delle assunzioni non scaricate, ovvero non compare libero in nessuna formula di \(\Gamma\).
+
+  Per ipotesi induttiva si ha che \(\Gamma \models \subs{\psi}{x}{y}\) dunque, per ogni \(M,\overline{\sigma}\) si ha che \(M,\overline{\sigma}\models \Gamma \implies M,\overline{\sigma}\models \subs{\psi}{x}{y}\). 
+
+  Dovendo tale condizione valere per ogni assegnamento, fissato un \(d \in D\) \textbf{qualsiasi}, è possibile definire \(\overline{\sigma}=\sigma[y\mapsfrom d]\) per un qualsiasi \(\sigma\). A questo punto, per il \Namedcref{lem:subs_in_non_present_vars} si ha che \(M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y} \iff M,\sigma[x\mapsfrom d]\models \psi\). Inoltre, essendo \(y\) non libero in nessuna formula di \(\Gamma\), per la \Namedcref{prop:satisfaction_independence} si ha che \(M,\sigma[y\mapsfrom d]\models \Gamma \iff M,\sigma\models \Gamma\). Di conseguenza, per ogni \(M,\sigma\) e per ogni \(d \in D\) si ha che
+  \[M,\sigma\models \Gamma \iff M,\sigma[y\mapsfrom d]\models \Gamma \implies M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y} \implies M,\sigma[x\mapsfrom d]\models \psi\]
+  e quindi \(M,\sigma\models \Gamma \implies M,\sigma\models \forall x, \psi\), ovvero \(\Gamma \models \forall x, \psi\).
+
+  Infine, concludiamo con \(\Rule = \exists E\), ovvero la regola con più vincoli di applicabilità. Fortunatamente, questa regola essendo molto simile alla precedente risulterà nella sua dimostrazione una generalizzazione di \(\forall I\). In questo caso, l'albero di deduzione per \(\phi\) sarà:
+
+  \begin{prooftree}
+    \AxiomC{\(\Gamma, {[\subs{\psi}{x}{y}]}_1\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\phi\)}
+    \AxiomC{\(\Gamma\)}
+    \UnaryInfC{\(\vdots\)}
+    \UnaryInfC{\(\exists x, \psi\)}
+    \RuleLabel{\(\exists E_1\)}
+    \BinaryInfC{\(\phi\)}
+  \end{prooftree}
+  in cui per ipotesi di applicabilità di \(\exists E\) si ha che \(y\) non compare in \(\psi\) e che non compare libero né in \(\phi\) né in nessuna delle assunzioni non scaricate, ovvero non compare libero in nessuna formula di \(\Gamma\).
+
+  Per ipotesi induttiva abbiamo che \(\Gamma, \subs{\psi}{x}{y} \models \phi\) e che \(\Gamma \models \exists x, \psi\). Chiaramente, per definizione di conseguenza logica, si ha che per entrambe le ipotesi induttive si ha che, per ogni \(M,\sigma\), se \(M,\sigma\) soddisfano le premesse allora soddisfano le rispettive conclusioni.
+
+  In particolare, per ogni \(M,\sigma\), si ha
+  \[M,\sigma \models \Gamma \implies M,\sigma\models \exists x, \psi\]
+  e
+  \[M,\sigma\models\Gamma \cup \set{\subs{\psi}{x}{y}} \implies M,\sigma\models \phi \]
+
+  Partendo dalla prima ipotesi induttiva, sappiamo che per semantica di \(\exists\) la condizione equivale a, per ogni \(M,\sigma\) e per qualche \(d \in D\),
+  \(M,\sigma \models \Gamma \implies M,\sigma[x\mapsfrom d]\models \psi\). Essendo \(y\notin \Var(\psi)\) per ipotesi di applicabilità, dal \Namedcref{lem:subs_in_non_present_vars} si ha che \(M,\sigma[x\mapsfrom d]\models \psi \iff M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\). Dunque, per qualche \(d\in D\),
+  \[M,\sigma\models \Gamma \implies M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\]
+
+  Venendo alla seconda ipotesi induttiva, dovendo valere per ogni assegnamento \(\sigma\), varrà in particolare per \(\sigma[y\mapsfrom d]\) con \(d\) fissato in precedenza. Dunque \(M,\sigma[y\mapsfrom d]\models \Gamma \cup \set{\subs{\psi}{x}{y}} \implies M,\sigma[y\mapsfrom d]\models \phi\). 
+
+  Chiaramente \(M,\sigma[y\mapsfrom d]\models \Gamma\cup\set{\subs{\psi}{x}{y}}\) equivale a \(M,\sigma[y\mapsfrom d]\models \Gamma\) \textbf{e} \(M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\). Essendo che \(y\) non è libero in nessuna formula di \(\Gamma\), \(M,\sigma[y\mapsfrom d]\models \Gamma\) equivale a \(M,\sigma\models \Gamma\).
+  Di conseguenza si ha che
+  \[M,\sigma\models \Gamma \text{ e } M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y} \implies M,\sigma[y\mapsfrom d]\models \phi\]
+
+  Chiaramente \(M,\sigma\models \Gamma \implies M,\sigma\models \Gamma\) e inoltre, per quanto visto grazie alla prima ipotesi induttiva, si ha che \(M,\sigma\models \Gamma \implies M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\). Dunque, implicando entrambi i congiunti, si ha chiaramente che 
+  \[M,\sigma \models \Gamma \implies M,\sigma\models \Gamma \text{ e } M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\implies M,\sigma[y\mapsfrom d]\models \phi\]
+
+  Infine, essendo per ipotesi di applicabilità che \(y\) non compare libero in \(\phi\), per la \Namedcref{prop:satisfaction_independence} si ha che \(M,\sigma[y\mapsfrom d]\models \phi \iff M,\sigma\models \phi\). Dunque, per ogni \(M,\sigma\) si ha
+
+  \[M,\sigma \models \Gamma \implies M,\sigma\models \Gamma \text{ e } M,\sigma[y\mapsfrom d]\models \subs{\psi}{x}{y}\implies M,\sigma[y\mapsfrom d]\models \phi\implies M,\sigma\models \phi\]
+
 \end{proof}

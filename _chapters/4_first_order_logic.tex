@@ -278,7 +278,7 @@ In termini intuitivi, questa proposizione ci sta dicendo che l'interpretazione d
 
 Estendiamo dunque questo risultato alle formule, dimostrando che la relazione di soddisfazione \(M,\sigma\models \phi\) dipende solo dall'interpretazione delle variabili libere che compaiono in \(\phi\), e non da altre variabili che potrebbero essere presenti in altri termini o formule.
 
-\begin{proposition}[label=prop:satisfaction_independence]{Indipendenza della soddisfazione dalle variabili non libere}
+\begin{proposition}[namedlabel={prop:satisfaction_independence}{Indipendenza della soddisfazione dalle variabili non libere}]{Indipendenza della soddisfazione dalle variabili non libere}
   Sia \(\phi\in\FOL\) con \(FV(\phi) = \set{x_1, \ldots, x_n}\) e \(\sigma_1,\sigma_2\) con \(\sigma_1(x_i) = \sigma_2(x_i)\) per ogni \(i\in\{1,\ldots,n\}\), allora:
   \[M,\sigma_1\models \phi \iff M,\sigma_2 \models \phi\]
   per ogni struttura \(M\).
