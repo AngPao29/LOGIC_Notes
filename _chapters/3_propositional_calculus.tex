@@ -827,7 +827,7 @@ In un certo senso, sia la denotazione che la teoria collegano il mondo sintattic
 
 Andiamo dunque a vedere qualche proprietà delle teorie di modelli, che ci permetteranno di costruire un modello a partire da un insieme di formule consistente.
 
-\begin{proposition}{}
+\begin{proposition}{Massima consistenza della teoria di un modello}
   Sia \(m\) un modello e \(\Th{m}\) la sua teoria. Allora \(\Th{m}\) è massimalmente consistente.
 \end{proposition}
 
@@ -837,7 +837,7 @@ Andiamo dunque a vedere qualche proprietà delle teorie di modelli, che ci perme
   Per dimostrare che \(\Th{m}\) è massimale, dobbiamo dimostrare che, per ogni formula \(\psi\), o \(\psi\in\Th{m}\) o \(\neg\psi\in\Th{m}\) ma non entrambe. Questo però è immediato per semantica della negazione, poiché se \(m\) soddisfa \(\psi\) allora non può soddisfare \(\neg\psi\), e viceversa. Inoltre se \(m\) non soddisfa \(\psi\) allora soddisfa \(\neg\psi\).
 \end{proof}
 
-\begin{proposition}[label=prop:max-consistent-set-are-theory]{}
+\begin{proposition}[label=prop:max-consistent-set-are-theory]{Insiemi massimalmente consistenti sono teorie}
   Sia \(\Sigma^* \subseteq \PL\) massimalmente consistente. Allora esiste un modello \(m\) tale che \(\Sigma^* = \Th{m}\).
 \end{proposition}
 
