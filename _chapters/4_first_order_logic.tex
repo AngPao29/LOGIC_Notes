@@ -14,7 +14,7 @@ Infine, è usuale nel linguaggio parlare di oggetti identificandoli indirettamen
 
 La logica del prim'ordine permette dunque di parlare di oggetti di un dominio direttamente (nomi detti costanti) o indirettamente a partire di altri oggetti (funzioni), e di parlare di proprietà di tali oggetti o relazioni tra essi (predicati). Questo tipo di costruzione di nomi ci permette di creare un insieme infinito di nomi a partire da un insieme finito di costanti e funzioni.\footnote{Per avere un insieme infinito di termini sono sufficienti una costante e una funzione unaria. Interpretando la costante con il numero \(0\) e la funzione come la funzione successore, è possibile infatti rappresentare tutto \(\N\).} L'insieme di questi oggetti è detto insieme dei \keyword{termini}. Tali termini possono essere usati come argomenti di proprietà, relazioni o altre funzioni creando nuovi termini.
 
-\section{Sintassi della Logica del Prim'Orine}
+\section{Sintassi della Logica del Prim'Ordine}
 
 Come già accennato nell'introduzione del capitolo, l'obiettivo è di arricchire la logica proposizionale per ottenere una granularità sufficiente a parlare oltre che di fatti a se stanti, anche di oggetti, che sia direttamente o indirettamente, e delle loro proprietà e relazioni. Per fare ciò dobbiamo iniziare dalla sintassi, la quale avrà bisogno in primo luogo di nuovi simboli \textit{non-logici} che colgano le differenze tra i vari tipi di componenti del discorso.
 
@@ -278,7 +278,7 @@ In termini intuitivi, questa proposizione ci sta dicendo che l'interpretazione d
 
 Estendiamo dunque questo risultato alle formule, dimostrando che la relazione di soddisfazione \(M,\sigma\models \phi\) dipende solo dall'interpretazione delle variabili libere che compaiono in \(\phi\), e non da altre variabili che potrebbero essere presenti in altri termini o formule.
 
-\begin{proposition}[label=prop:satisfaction_independence]{Indipendenza della soddisfazione dalle variabili non libere}
+\begin{proposition}[namedlabel={prop:satisfaction_independence}{Indipendenza della soddisfazione dalle variabili non libere}]{Indipendenza della soddisfazione dalle variabili non libere}
   Sia \(\phi\in\FOL\) con \(FV(\phi) = \set{x_1, \ldots, x_n}\) e \(\sigma_1,\sigma_2\) con \(\sigma_1(x_i) = \sigma_2(x_i)\) per ogni \(i\in\{1,\ldots,n\}\), allora:
   \[M,\sigma_1\models \phi \iff M,\sigma_2 \models \phi\]
   per ogni struttura \(M\).
